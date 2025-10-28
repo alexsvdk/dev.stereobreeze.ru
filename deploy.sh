@@ -8,7 +8,7 @@ echo "📦 Deploying to Yandex Cloud S3..."
 
 # Static assets with long cache (CSS, JS, images, fonts)
 echo "  📄 Uploading static assets with long cache..."
-aws s3 sync dist/ s3://dev-stereobreeze-ru \
+aws s3 sync dist/ s3://dev.stereobreeze.ru \
   --profile yandex \
   --endpoint-url https://storage.yandexcloud.net \
   --cache-control "public, max-age=31536000, immutable" \
@@ -18,7 +18,7 @@ aws s3 sync dist/ s3://dev-stereobreeze-ru \
 
 # HTML files with no-cache
 echo "  📝 Uploading HTML files with no-cache..."
-aws s3 sync dist/ s3://dev-stereobreeze-ru \
+aws s3 sync dist/ s3://dev.stereobreeze.ru \
   --profile yandex \
   --endpoint-url https://storage.yandexcloud.net \
   --cache-control "public, max-age=0, must-revalidate" \
@@ -28,7 +28,7 @@ aws s3 sync dist/ s3://dev-stereobreeze-ru \
 
 # JSON files with short cache (language files)
 echo "  🌐 Uploading JSON files with 1-hour cache..."
-aws s3 sync dist/ s3://dev-stereobreeze-ru \
+aws s3 sync dist/ s3://dev.stereobreeze.ru \
   --profile yandex \
   --endpoint-url https://storage.yandexcloud.net \
   --cache-control "public, max-age=3600" \

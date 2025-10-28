@@ -40,13 +40,13 @@ Save the `key_id` and `secret` for S3 configuration.
 ```bash
 # Create bucket
 yc storage bucket create \
-  --name dev-stereobreeze-ru \
+  --name dev.stereobreeze.ru \
   --default-storage-class standard \
   --max-size 1073741824
 
 # Configure bucket for static website hosting
 yc storage bucket update \
-  --name dev-stereobreeze-ru \
+  --name dev.stereobreeze.ru \
   --website-settings '{
     "index": "index.html",
     "error": "index.html"
@@ -54,7 +54,7 @@ yc storage bucket update \
 
 # Make bucket public
 yc storage bucket update \
-  --name dev-stereobreeze-ru \
+  --name dev.stereobreeze.ru \
   --public-read
 ```
 
@@ -90,7 +90,7 @@ endpoint_url = https://storage.yandexcloud.net
 
 ```bash
 # Sync dist folder to S3 bucket
-aws s3 sync dist/ s3://dev-stereobreeze-ru \
+aws s3 sync dist/ s3://dev.stereobreeze.ru \
   --profile yandex \
   --endpoint-url https://storage.yandexcloud.net \
   --cache-control "public, max-age=31536000" \
@@ -98,7 +98,7 @@ aws s3 sync dist/ s3://dev-stereobreeze-ru \
   --exclude "*.json"
 
 # Upload HTML files with no-cache
-aws s3 sync dist/ s3://dev-stereobreeze-ru \
+aws s3 sync dist/ s3://dev.stereobreeze.ru \
   --profile yandex \
   --endpoint-url https://storage.yandexcloud.net \
   --cache-control "public, max-age=0, must-revalidate" \
@@ -106,7 +106,7 @@ aws s3 sync dist/ s3://dev-stereobreeze-ru \
   --include "*.html"
 
 # Upload JSON files with 1 hour cache
-aws s3 sync dist/ s3://dev-stereobreeze-ru \
+aws s3 sync dist/ s3://dev.stereobreeze.ru \
   --profile yandex \
   --endpoint-url https://storage.yandexcloud.net \
   --cache-control "public, max-age=3600" \
@@ -117,7 +117,7 @@ aws s3 sync dist/ s3://dev-stereobreeze-ru \
 ## Step 6: Configure Custom Domain
 
 1. Go to Yandex Cloud Console → Object Storage → Buckets
-2. Select `dev-stereobreeze-ru`
+2. Select `dev.stereobreeze.ru`
 3. Go to "HTTPS" tab
 4. Add domain: `dev.stereobreeze.ru`
 5. Follow instructions to verify domain ownership
@@ -128,7 +128,7 @@ aws s3 sync dist/ s3://dev-stereobreeze-ru \
 Add CNAME record in your DNS:
 
 ```
-dev.stereobreeze.ru → dev-stereobreeze-ru.website.yandexcloud.net
+dev.stereobreeze.ru → dev.stereobreeze.ru.website.yandexcloud.net
 ```
 
 ## Step 7: Enable CDN (Optional but Recommended)
@@ -137,7 +137,7 @@ dev.stereobreeze.ru → dev-stereobreeze-ru.website.yandexcloud.net
 # Create CDN resource
 yc cdn resource create \
   --cname dev.stereobreeze.ru \
-  --origin-custom-source dev-stereobreeze-ru.website.yandexcloud.net:443 \
+  --origin-custom-source dev.stereobreeze.ru.website.yandexcloud.net:443 \
   --origin-protocol https \
   --cert-manager-ssl-cert-id <CERT_ID>
 ```
@@ -162,7 +162,7 @@ npm run build
 echo "📦 Deploying to Yandex Cloud S3..."
 
 # Static assets with long cache
-aws s3 sync dist/ s3://dev-stereobreeze-ru \
+aws s3 sync dist/ s3://dev.stereobreeze.ru \
   --profile yandex \
   --endpoint-url https://storage.yandexcloud.net \
   --cache-control "public, max-age=31536000, immutable" \
@@ -171,7 +171,7 @@ aws s3 sync dist/ s3://dev-stereobreeze-ru \
   --delete
 
 # HTML files with no-cache
-aws s3 sync dist/ s3://dev-stereobreeze-ru \
+aws s3 sync dist/ s3://dev.stereobreeze.ru \
   --profile yandex \
   --endpoint-url https://storage.yandexcloud.net \
   --cache-control "public, max-age=0, must-revalidate" \
@@ -180,7 +180,7 @@ aws s3 sync dist/ s3://dev-stereobreeze-ru \
   --delete
 
 # JSON files with short cache
-aws s3 sync dist/ s3://dev-stereobreeze-ru \
+aws s3 sync dist/ s3://dev.stereobreeze.ru \
   --profile yandex \
   --endpoint-url https://storage.yandexcloud.net \
   --cache-control "public, max-age=3600" \
@@ -236,14 +236,14 @@ jobs:
       
       - name: Deploy to S3
         run: |
-          aws s3 sync dist/ s3://dev-stereobreeze-ru \
+          aws s3 sync dist/ s3://dev.stereobreeze.ru \
             --endpoint-url https://storage.yandexcloud.net \
             --cache-control "public, max-age=31536000" \
             --exclude "*.html" \
             --exclude "*.json" \
             --delete
           
-          aws s3 sync dist/ s3://dev-stereobreeze-ru \
+          aws s3 sync dist/ s3://dev.stereobreeze.ru \
             --endpoint-url https://storage.yandexcloud.net \
             --cache-control "public, max-age=0, must-revalidate" \
             --exclude "*" \
@@ -273,13 +273,13 @@ If needed to rollback:
 ```bash
 # List object versions
 aws s3api list-object-versions \
-  --bucket dev-stereobreeze-ru \
+  --bucket dev.stereobreeze.ru \
   --endpoint-url https://storage.yandexcloud.net
 
 # Restore previous version (if versioning enabled)
 aws s3api copy-object \
-  --bucket dev-stereobreeze-ru \
-  --copy-source dev-stereobreeze-ru/index.html?versionId=<VERSION_ID> \
+  --bucket dev.stereobreeze.ru \
+  --copy-source dev.stereobreeze.ru/index.html?versionId=<VERSION_ID> \
   --key index.html \
   --endpoint-url https://storage.yandexcloud.net
 ```
