@@ -945,3 +945,38 @@ section h2::before {
 	
 	/* Portfolio: screenshots responsive (already handled) */
 }
+
+/* Snap-Scroll Between Sections - Story 2.8 */
+.scroll-container {
+	scroll-snap-type: y proximity;
+	overflow-y: scroll;
+	height: 100vh;
+	scroll-behavior: smooth;
+}
+
+.scroll-container section {
+	scroll-snap-align: start;
+	scroll-snap-stop: normal;
+	min-height: 100vh;
+}
+
+/* Disable snap-scroll on mobile to prevent usability issues */
+@media (max-width: 767px) {
+	.scroll-container {
+		scroll-snap-type: none;
+		height: auto;
+	}
+	
+	.scroll-container section {
+		scroll-snap-align: none;
+		min-height: auto;
+	}
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+	.scroll-container {
+		scroll-snap-type: none;
+		scroll-behavior: auto;
+	}
+}
