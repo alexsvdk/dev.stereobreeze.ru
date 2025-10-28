@@ -80,28 +80,6 @@ import '../styles/global.css';
 
 			<article class="experience-item">
 				<div class="experience-header">
-					<div class="company-logo-placeholder">BS</div>
-					<div class="experience-title-group">
-						<h3>Black Star</h3>
-						<p class="position">Fullstack-разработчик</p>
-						<p class="period">Февраль 2020 — Июнь 2021</p>
-					</div>
-				</div>
-				<p class="description">Разработал с нуля и выпустил два мобильных приложения: WowChef (кулинарное приложение) и Black Star Fitness. Работал solo-разработчиком.</p>
-				<ul>
-					<li>Создал кроссплатформенные приложения на Flutter</li>
-					<li>Разработал backend на Kotlin/Ktor, развернутый в Kubernetes</li>
-					<li>Реализовал админ-панель на React для управления контентом</li>
-					<li>Опубликовал приложения в App Store и Google Play</li>
-					<li>Настроил CI/CD для автоматизации деплоя</li>
-				</ul>
-				<p class="tech">Flutter • Kotlin/Ktor • React • Kubernetes • Docker • CI/CD</p>
-			</article>
-
-			<hr class="section-divider" />
-
-			<article class="experience-item">
-				<div class="experience-header">
 					<img src="/images/logos/samsung-8.svg" alt="Samsung" class="company-logo" loading="lazy" />
 					<div class="experience-title-group">
 						<h3>IT Школа Samsung</h3>
@@ -264,6 +242,8 @@ import '../styles/global.css';
 				<a href="https://apps.apple.com/ru/app/id1450425813" target="_blank" rel="noopener">Посмотреть в App Store →</a>
 			</article>
 
+			<hr class="section-divider" />
+
 			<article class="project">
 				<div class="project-header">
 					<img 
@@ -320,6 +300,8 @@ import '../styles/global.css';
 					<a href="https://play.google.com/store/apps/details?id=info.eraperemen.eraperemen" target="_blank" rel="noopener">Google Play</a>
 				</div>
 			</article>
+
+			<hr class="section-divider" />
 
 			<article class="project">
 				<div class="project-header">
@@ -548,7 +530,15 @@ import '../styles/global.css';
 				}, skillObserverOptions);
 
 				skillItems.forEach(item => skillObserver.observe(item));
-			});
+
+			// Overtime Easter Egg
+			const overtimeLink = document.querySelector('.overtime-link');
+			if (overtimeLink) {
+				overtimeLink.addEventListener('click', () => {
+					alert('🚀 Overtime mode activated! Но лучше отдыхай иногда 😄');
+				});
+			}
+		});
 		</script>
 	</body>
 </html>
