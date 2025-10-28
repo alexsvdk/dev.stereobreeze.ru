@@ -558,14 +558,17 @@ section h2::before {
 	margin-top: 1rem;
 }
 
-.skill-item:hover .skill-tooltip {
-	max-height: 300px;
-	opacity: 1;
-	padding: 1.5rem;
-}
+/* Tooltip hover - only on devices with hover capability (not touch) */
+@media (hover: hover) and (pointer: fine) {
+	.skill-item:hover .skill-tooltip {
+		max-height: 300px;
+		opacity: 1;
+		padding: 1.5rem;
+	}
 
-.skill-item:hover .skill-star {
-	transform: scale(1.1) rotate(5deg);
+	.skill-item:hover .skill-star {
+		transform: scale(1.1) rotate(5deg);
+	}
 }
 
 .skill-tooltip ul {
@@ -631,9 +634,7 @@ section h2::before {
 		z-index: 1000;
 	}
 	
-	.skill-item:hover .skill-tooltip {
-		padding: 1rem;
-	}
+	/* Disable hover tooltip on mobile - keeping it hidden */
 }
 
 /* Portfolio - Glossy Screenshot Effect - Story 2.6 */
