@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Color Themes - Interactive Visualizer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header p {
+            font-size: 18px;
+            color: #999;
+        }
+        
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .theme-card {
+            background: #1a1a1a;
+            border-radius: 16px;
+            padding: 32px;
+            border: 2px solid #2a2a2a;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-card:hover {
+            border-color: var(--theme-primary);
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+            transform: translateY(-4px);
+        }
+        
+        .theme-header {
+            margin-bottom: 24px;
+        }
+        
+        .theme-header h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: var(--theme-primary);
+        }
+        
+        .theme-header .theme-desc {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        
+        .theme-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .theme-tag {
+            padding: 4px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            font-size: 12px;
+            color: #ccc;
+        }
+        
+        .color-palette {
+            margin-bottom: 32px;
+        }
+        
+        .palette-section {
+            margin-bottom: 20px;
+        }
+        
+        .palette-section h3 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 12px;
+        }
+        
+        .color-swatches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+        }
+        
+        .color-swatch {
+            text-align: center;
+        }
+        
+        .swatch-color {
+            height: 80px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.2s ease;
+        }
+        
+        .swatch-color:hover {
+            transform: scale(1.05);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .swatch-label {
+            font-size: 11px;
+            color: #999;
+            margin-bottom: 4px;
+        }
+        
+        .swatch-hex {
+            font-size: 12px;
+            font-family: 'Courier New', monospace;
+            color: #ccc;
+        }
+        
+        .components-preview {
+            margin-bottom: 32px;
+        }
+        
+        .components-preview h3 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 16px;
+        }
+        
+        .preview-section {
+            background: var(--theme-bg);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--theme-border);
+        }
+        
+        .buttons-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary {
+            background: var(--theme-primary);
+            color: var(--theme-bg);
+            box-shadow: 0 0 20px var(--theme-primary-glow);
+        }
+        
+        .btn-primary:hover {
+            box-shadow: 0 0 30px var(--theme-primary-glow);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--theme-primary);
+            border: 2px solid var(--theme-primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--theme-primary);
+            color: var(--theme-bg);
+        }
+        
+        .card-example {
+            background: var(--theme-card-bg);
+            border: 1px solid var(--theme-border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+        
+        .card-example h4 {
+            color: var(--theme-heading);
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+        
+        .card-example p {
+            color: var(--theme-text);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .input-example {
+            margin-bottom: 16px;
+        }
+        
+        .input-example label {
+            display: block;
+            color: var(--theme-text);
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .input-example input {
+            width: 100%;
+            padding: 12px;
+            background: var(--theme-input-bg);
+            border: 2px solid var(--theme-border);
+            border-radius: 8px;
+            color: var(--theme-text);
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+        
+        .input-example input:focus {
+            outline: none;
+            border-color: var(--theme-primary);
+            box-shadow: 0 0 0 3px var(--theme-primary-glow);
+        }
+        
+        .alert {
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        
+        .alert-success {
+            background: rgba(0, 255, 136, 0.1);
+            border-left: 4px solid var(--theme-success);
+            color: var(--theme-success);
+        }
+        
+        .alert-error {
+            background: rgba(255, 0, 85, 0.1);
+            border-left: 4px solid var(--theme-error);
+            color: var(--theme-error);
+        }
+        
+        .personality-box {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            padding: 16px;
+            border-left: 4px solid var(--theme-accent);
+        }
+        
+        .personality-box h4 {
+            color: var(--theme-accent);
+            margin-bottom: 8px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .personality-box ul {
+            list-style: none;
+            color: #ccc;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+        
+        .personality-box li:before {
+            content: "▹ ";
+            color: var(--theme-accent);
+            margin-right: 8px;
+        }
+        
+        /* Theme 1: Classic Cyberpunk */
+        .theme-1 {
+            --theme-primary: #00ffff;
+            --theme-primary-glow: rgba(0, 255, 255, 0.3);
+            --theme-accent: #ffd700;
+            --theme-bg: #0a0a0a;
+            --theme-card-bg: #1a1a1a;
+            --theme-input-bg: #0f0f0f;
+            --theme-heading: #ffffff;
+            --theme-text: #cccccc;
+            --theme-border: #2a2a2a;
+            --theme-success: #00ff88;
+            --theme-error: #ff0055;
+        }
+        
+        /* Theme 2: Purple Neon */
+        .theme-2 {
+            --theme-primary: #ff00ff;
+            --theme-primary-glow: rgba(255, 0, 255, 0.3);
+            --theme-accent: #00ffff;
+            --theme-bg: #0a0514;
+            --theme-card-bg: #1a0f2e;
+            --theme-input-bg: #0f0a1e;
+            --theme-heading: #ffffff;
+            --theme-text: #d4c5f9;
+            --theme-border: #2a1f3d;
+            --theme-success: #00ff88;
+            --theme-error: #ff0055;
+        }
+        
+        /* Theme 3: Matrix Green */
+        .theme-3 {
+            --theme-primary: #00ff41;
+            --theme-primary-glow: rgba(0, 255, 65, 0.3);
+            --theme-accent: #00ffff;
+            --theme-bg: #0a140a;
+            --theme-card-bg: #0f1e0f;
+            --theme-input-bg: #0a190a;
+            --theme-heading: #ffffff;
+            --theme-text: #c5f9d4;
+            --theme-border: #1f3d2a;
+            --theme-success: #00ff88;
+            --theme-error: #ff0055;
+        }
+        
+        /* Theme 4: Electric Blue */
+        .theme-4 {
+            --theme-primary: #0088ff;
+            --theme-primary-glow: rgba(0, 136, 255, 0.3);
+            --theme-accent: #ff0088;
+            --theme-bg: #050a14;
+            --theme-card-bg: #0a0f1e;
+            --theme-input-bg: #050a19;
+            --theme-heading: #ffffff;
+            --theme-text: #c5d9f9;
+            --theme-border: #1f2a3d;
+            --theme-success: #00ff88;
+            --theme-error: #ff0055;
+        }
+        
+        @media (max-width: 768px) {
+            .themes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Portfolio Color Themes</h1>
+        <p>Выбери палитру, которая лучше всего передаёт твой стиль</p>
+    </div>
+    
+    <div class="themes-grid">
+        <!-- Theme 1: Classic Cyberpunk -->
+        <div class="theme-card theme-1">
+            <div class="theme-header">
+                <h2>1. Classic Cyberpunk</h2>
+                <p class="theme-desc">Классический киберпанк с cyan и gold — узнаваемый, премиальный, технологичный</p>
+                <div class="theme-tags">
+                    <span class="theme-tag">Professional</span>
+                    <span class="theme-tag">Trust</span>
+                    <span class="theme-tag">High-tech</span>
+                </div>
+            </div>
+            
+            <div class="color-palette">
+                <div class="palette-section">
+                    <h3>Primary Colors</h3>
+                    <div class="color-swatches">
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #00ffff;"></div>
+                            <div class="swatch-label">Primary</div>
+                            <div class="swatch-hex">#00ffff</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #ffd700;"></div>
+                            <div class="swatch-label">Accent</div>
+                            <div class="swatch-hex">#ffd700</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="palette-section">
+                    <h3>Backgrounds</h3>
+                    <div class="color-swatches">
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #0a0a0a;"></div>
+                            <div class="swatch-label">Background</div>
+                            <div class="swatch-hex">#0a0a0a</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #1a1a1a;"></div>
+                            <div class="swatch-label">Card</div>
+                            <div class="swatch-hex">#1a1a1a</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #2a2a2a;"></div>
+                            <div class="swatch-label">Border</div>
+                            <div class="swatch-hex">#2a2a2a</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="palette-section">
+                    <h3>Semantic Colors</h3>
+                    <div class="color-swatches">
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #00ff88;"></div>
+                            <div class="swatch-label">Success</div>
+                            <div class="swatch-hex">#00ff88</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #ff0055;"></div>
+                            <div class="swatch-label">Error</div>
+                            <div class="swatch-hex">#ff0055</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="components-preview">
+                <h3>Live Components Preview</h3>
+                <div class="preview-section">
+                    <div class="buttons-row">
+                        <button class="btn btn-primary">Написать в Telegram</button>
+                        <button class="btn btn-secondary">Посмотреть проекты</button>
+                    </div>
+                    
+                    <div class="card-example">
+                        <h4>Яндекс Про</h4>
+                        <p>Флагманское приложение Яндекса для водителей такси и курьеров. Миллионы пользователей, высоконагруженная система.</p>
+                    </div>
+                    
+                    <div class="input-example">
+                        <label>Email</label>
+                        <input type="email" placeholder="your@email.com">
+                    </div>
+                    
+                    <div class="alert alert-success">✓ Сообщение успешно отправлено</div>
+                    <div class="alert alert-error">✗ Ошибка: проверьте введённые данные</div>
+                </div>
+            </div>
+            
+            <div class="personality-box">
+                <h4>Personality</h4>
+                <ul>
+                    <li>Эмоция: Доверие + Технологичность</li>
+                    <li>Ассоциации: Tron, Blade Runner, профессиональные tech-бренды</li>
+                    <li>Лучше для: Enterprise клиенты, CTO, серьёзные проекты</li>
+                    <li>Впечатление: "Надёжный профессионал с актуальным стеком"</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Theme 2: Purple Neon -->
+        <div class="theme-card theme-2">
+            <div class="theme-header">
+                <h2>2. Purple Neon</h2>
+                <p class="theme-desc">Магический фиолетовый + cyan — креативный, современный, запоминающийся</p>
+                <div class="theme-tags">
+                    <span class="theme-tag">Creative</span>
+                    <span class="theme-tag">Modern</span>
+                    <span class="theme-tag">Unique</span>
+                </div>
+            </div>
+            
+            <div class="color-palette">
+                <div class="palette-section">
+                    <h3>Primary Colors</h3>
+                    <div class="color-swatches">
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #ff00ff;"></div>
+                            <div class="swatch-label">Primary</div>
+                            <div class="swatch-hex">#ff00ff</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #00ffff;"></div>
+                            <div class="swatch-label">Accent</div>
+                            <div class="swatch-hex">#00ffff</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="palette-section">
+                    <h3>Backgrounds</h3>
+                    <div class="color-swatches">
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #0a0514;"></div>
+                            <div class="swatch-label">Background</div>
+                            <div class="swatch-hex">#0a0514</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #1a0f2e;"></div>
+                            <div class="swatch-label">Card</div>
+                            <div class="swatch-hex">#1a0f2e</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #2a1f3d;"></div>
+                            <div class="swatch-label">Border</div>
+                            <div class="swatch-hex">#2a1f3d</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="palette-section">
+                    <h3>Semantic Colors</h3>
+                    <div class="color-swatches">
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #00ff88;"></div>
+                            <div class="swatch-label">Success</div>
+                            <div class="swatch-hex">#00ff88</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #ff0055;"></div>
+                            <div class="swatch-label">Error</div>
+                            <div class="swatch-hex">#ff0055</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="components-preview">
+                <h3>Live Components Preview</h3>
+                <div class="preview-section">
+                    <div class="buttons-row">
+                        <button class="btn btn-primary">Написать в Telegram</button>
+                        <button class="btn btn-secondary">Посмотреть проекты</button>
+                    </div>
+                    
+                    <div class="card-example">
+                        <h4>Яндекс Про</h4>
+                        <p>Флагманское приложение Яндекса для водителей такси и курьеров. Миллионы пользователей, высоконагруженная система.</p>
+                    </div>
+                    
+                    <div class="input-example">
+                        <label>Email</label>
+                        <input type="email" placeholder="your@email.com">
+                    </div>
+                    
+                    <div class="alert alert-success">✓ Сообщение успешно отправлено</div>
+                    <div class="alert alert-error">✗ Ошибка: проверьте введённые данные</div>
+                </div>
+            </div>
+            
+            <div class="personality-box">
+                <h4>Personality</h4>
+                <ul>
+                    <li>Эмоция: Креативность + Инновация</li>
+                    <li>Ассоциации: Synthwave, ретро-футуризм, креативные агентства</li>
+                    <li>Лучше для: Стартапы, креативные проекты, уникальные продукты</li>
+                    <li>Впечатление: "Креативный профи, который мыслит нестандартно"</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Theme 3: Matrix Green -->
+        <div class="theme-card theme-3">
+            <div class="theme-header">
+                <h2>3. Matrix Green</h2>
+                <p class="theme-desc">Зелёный Matrix + cyan — хакерский, технический, аутентичный киберпанк</p>
+                <div class="theme-tags">
+                    <span class="theme-tag">Technical</span>
+                    <span class="theme-tag">Authentic</span>
+                    <span class="theme-tag">Hacker</span>
+                </div>
+            </div>
+            
+            <div class="color-palette">
+                <div class="palette-section">
+                    <h3>Primary Colors</h3>
+                    <div class="color-swatches">
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #00ff41;"></div>
+                            <div class="swatch-label">Primary</div>
+                            <div class="swatch-hex">#00ff41</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #00ffff;"></div>
+                            <div class="swatch-label">Accent</div>
+                            <div class="swatch-hex">#00ffff</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="palette-section">
+                    <h3>Backgrounds</h3>
+                    <div class="color-swatches">
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #0a140a;"></div>
+                            <div class="swatch-label">Background</div>
+                            <div class="swatch-hex">#0a140a</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #0f1e0f;"></div>
+                            <div class="swatch-label">Card</div>
+                            <div class="swatch-hex">#0f1e0f</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #1f3d2a;"></div>
+                            <div class="swatch-label">Border</div>
+                            <div class="swatch-hex">#1f3d2a</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="palette-section">
+                    <h3>Semantic Colors</h3>
+                    <div class="color-swatches">
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #00ff88;"></div>
+                            <div class="swatch-label">Success</div>
+                            <div class="swatch-hex">#00ff88</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #ff0055;"></div>
+                            <div class="swatch-label">Error</div>
+                            <div class="swatch-hex">#ff0055</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="components-preview">
+                <h3>Live Components Preview</h3>
+                <div class="preview-section">
+                    <div class="buttons-row">
+                        <button class="btn btn-primary">Написать в Telegram</button>
+                        <button class="btn btn-secondary">Посмотреть проекты</button>
+                    </div>
+                    
+                    <div class="card-example">
+                        <h4>Яндекс Про</h4>
+                        <p>Флагманское приложение Яндекса для водителей такси и курьеров. Миллионы пользователей, высоконагруженная система.</p>
+                    </div>
+                    
+                    <div class="input-example">
+                        <label>Email</label>
+                        <input type="email" placeholder="your@email.com">
+                    </div>
+                    
+                    <div class="alert alert-success">✓ Сообщение успешно отправлено</div>
+                    <div class="alert alert-error">✗ Ошибка: проверьте введённые данные</div>
+                </div>
+            </div>
+            
+            <div class="personality-box">
+                <h4>Personality</h4>
+                <ul>
+                    <li>Эмоция: Технический навык + Аутентичность</li>
+                    <li>Ассоциации: The Matrix, хакерская культура, terminal UI</li>
+                    <li>Лучше для: Tech-энтузиасты, backend-фокус, системное программирование</li>
+                    <li>Впечатление: "Настоящий технарь, который знает что делает"</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Theme 4: Electric Blue -->
+        <div class="theme-card theme-4">
+            <div class="theme-header">
+                <h2>4. Electric Blue</h2>
+                <p class="theme-desc">Электрический синий + розовый — энергичный, современный, premium</p>
+                <div class="theme-tags">
+                    <span class="theme-tag">Energetic</span>
+                    <span class="theme-tag">Premium</span>
+                    <span class="theme-tag">Modern</span>
+                </div>
+            </div>
+            
+            <div class="color-palette">
+                <div class="palette-section">
+                    <h3>Primary Colors</h3>
+                    <div class="color-swatches">
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #0088ff;"></div>
+                            <div class="swatch-label">Primary</div>
+                            <div class="swatch-hex">#0088ff</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #ff0088;"></div>
+                            <div class="swatch-label">Accent</div>
+                            <div class="swatch-hex">#ff0088</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="palette-section">
+                    <h3>Backgrounds</h3>
+                    <div class="color-swatches">
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #050a14;"></div>
+                            <div class="swatch-label">Background</div>
+                            <div class="swatch-hex">#050a14</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #0a0f1e;"></div>
+                            <div class="swatch-label">Card</div>
+                            <div class="swatch-hex">#0a0f1e</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #1f2a3d;"></div>
+                            <div class="swatch-label">Border</div>
+                            <div class="swatch-hex">#1f2a3d</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="palette-section">
+                    <h3>Semantic Colors</h3>
+                    <div class="color-swatches">
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #00ff88;"></div>
+                            <div class="swatch-label">Success</div>
+                            <div class="swatch-hex">#00ff88</div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch-color" style="background: #ff0055;"></div>
+                            <div class="swatch-label">Error</div>
+                            <div class="swatch-hex">#ff0055</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="components-preview">
+                <h3>Live Components Preview</h3>
+                <div class="preview-section">
+                    <div class="buttons-row">
+                        <button class="btn btn-primary">Написать в Telegram</button>
+                        <button class="btn btn-secondary">Посмотреть проекты</button>
+                    </div>
+                    
+                    <div class="card-example">
+                        <h4>Яндекс Про</h4>
+                        <p>Флагманское приложение Яндекса для водителей такси и курьеров. Миллионы пользователей, высоконагруженная система.</p>
+                    </div>
+                    
+                    <div class="input-example">
+                        <label>Email</label>
+                        <input type="email" placeholder="your@email.com">
+                    </div>
+                    
+                    <div class="alert alert-success">✓ Сообщение успешно отправлено</div>
+                    <div class="alert alert-error">✗ Ошибка: проверьте введённые данные</div>
+                </div>
+            </div>
+            
+            <div class="personality-box">
+                <h4>Personality</h4>
+                <ul>
+                    <li>Эмоция: Энергия + Современность</li>
+                    <li>Ассоциации: Современные tech-бренды, Spotify, Twitch</li>
+                    <li>Лучше для: Product-компании, consumer apps, яркая личность</li>
+                    <li>Впечатление: "Современный разработчик в пульсе индустрии"</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 80px; padding: 40px; color: #666;">
+        <p style="margin-bottom: 12px;">🎨 Выбери тему, которая лучше передаёт твой стиль и позиционирование</p>
+        <p style="font-size: 14px;">Все темы адаптированы под киберпанк-эстетику с балансом профессионализма</p>
+    </div>
+</body>
+</html>

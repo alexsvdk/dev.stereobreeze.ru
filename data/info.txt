@@ -1,0 +1,21 @@
+Бренд и дизайн:
+- Все фото меня обработаны нейросетью в стиле киберпанк
+- Промпт такой:   cyberpunk boy with glowing cyan eyes, short messy two-tone hair (dark   
+  roots fading to electric blue tips), high-tech olive jacket with neon   
+  cyan piping and yellow glowing accents, futuristic collar with embedded   
+  lights, holographic japanese text overlays in background, subtle glitch   
+  effects and energy sparks, dark moody atmosphere, anime style, ultra   
+  detailed, cinematic lighting, 8k --v 5 --q 2 --stylize 750  
+- Стиль темный, темная тема, неоновое свечение
+
+Техническое:
+- Сайт должен работать на русском и английском языках
+
+О себе:
+- Нейросеть, напиши от моего имени пожлуйста. " более личный текст, увлечения, мотивация"
+
+Структура разделов сайта: 
+Просто одностраничник. При это скриншоты портфолио лучше сделать моеньше, чтобы не занимало много места
+
+Технические требования:
+- Поддерживаемость, чтобы можно было легко добавлять новые разделы и одновлять информацию через вайбкодин
