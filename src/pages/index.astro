@@ -435,10 +435,10 @@ import '../styles/global.css';
 							<img src="/images/logos/linkedin-icon-1.svg" alt="LinkedIn" class="contact-icon" loading="lazy" />
 							<span>LinkedIn</span>
 						</a>
-						<a href="mailto:alex.svdk@gmail.com" class="contact-link">
-							<img src="/images/logos/mail-ios.svg" alt="Email" class="contact-icon" loading="lazy" />
-							<span>alex.svdk@gmail.com</span>
-						</a>
+					<a href="mailto:alex.svdk@gmail.com" class="contact-link">
+						<span class="email-at-symbol">@</span>
+						<span>alex.svdk@gmail.com</span>
+					</a>
 					</div>
 				</div>
 			</div>
@@ -538,6 +538,40 @@ import '../styles/global.css';
 					alert('🚀 Overtime mode activated! Но лучше отдыхай иногда 😄');
 				});
 			}
+
+			// Auto-scroll for screenshot galleries
+			const screenshotGrids = document.querySelectorAll('.project-screenshots-grid');
+			screenshotGrids.forEach(grid => {
+				if (!(grid instanceof HTMLElement)) return;
+				
+				let scrollAmount = 0;
+				const scrollSpeed = 0.5; // pixels per frame
+				const maxScroll = grid.scrollWidth - grid.clientWidth;
+
+				// Pause auto-scroll on hover
+				let isPaused = false;
+				grid.addEventListener('mouseenter', () => {
+					isPaused = true;
+				});
+				
+				grid.addEventListener('mouseleave', () => {
+					isPaused = false;
+				});
+
+				// Continuous auto-scroll with pause on hover
+				function autoScroll() {
+					if (!isPaused && maxScroll > 0) {
+						scrollAmount += scrollSpeed;
+						if (scrollAmount >= maxScroll) {
+							scrollAmount = 0;
+						}
+						grid.scrollLeft = scrollAmount;
+					}
+					requestAnimationFrame(autoScroll);
+				}
+
+				autoScroll();
+			});
 		});
 		</script>
 	</body>

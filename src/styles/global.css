@@ -693,10 +693,12 @@ section h2::before {
 	gap: 1rem;
 	margin-bottom: 2rem;
 	overflow-x: auto;
+	overflow-y: visible; /* Prevent clipping on hover */
 	scroll-behavior: smooth;
 	-webkit-overflow-scrolling: touch;
 	scrollbar-width: thin;
 	scrollbar-color: rgba(0, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
+	padding: 0.5rem 0 1rem; /* Extra space for hover lift */
 }
 
 /* Custom scrollbar for webkit browsers */
@@ -1260,9 +1262,16 @@ section h2::before {
 	filter: invert(1) brightness(1.2);
 }
 
-/* Email icon - keep original colors */
-.contact-link img[src*="mail"] {
-	filter: none;
+.email-at-symbol {
+	width: 24px;
+	height: 24px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: var(--color-cyan);
 }
 
 @media (max-width: 767px) {
