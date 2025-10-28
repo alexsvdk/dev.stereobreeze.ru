@@ -545,7 +545,7 @@ import '../styles/global.css';
 				if (!(grid instanceof HTMLElement)) return;
 				
 				let scrollAmount = 0;
-				const scrollSpeed = 0.5; // pixels per frame
+				const scrollSpeed = 0.05; // pixels per frame (10x slower)
 				const maxScroll = grid.scrollWidth - grid.clientWidth;
 
 				// Pause auto-scroll on hover
