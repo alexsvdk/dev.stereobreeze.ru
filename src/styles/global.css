@@ -348,3 +348,147 @@ section h2::before {
 		font-size: 1.125rem;
 	}
 }
+
+/* Glitch Effect - Story 2.4 */
+.glitch-text {
+	position: relative;
+	display: inline-block;
+	animation: glitch-trigger 9s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+.glitch-text::before {
+	color: var(--color-cyan);
+	z-index: -1;
+	animation: glitch-before 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	animation-play-state: paused;
+}
+
+.glitch-text::after {
+	color: var(--color-purple);
+	z-index: -2;
+	animation: glitch-after 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	animation-play-state: paused;
+}
+
+@keyframes glitch-trigger {
+	0%, 100% {
+		transform: translate(0);
+	}
+	10%, 10.3% {
+		animation-play-state: running;
+	}
+}
+
+@keyframes glitch-before {
+	0% {
+		opacity: 0;
+		transform: translate(0);
+	}
+	10% {
+		opacity: 0.8;
+		transform: translate(-2px, 2px);
+	}
+	20% {
+		opacity: 0.8;
+		transform: translate(2px, -2px);
+	}
+	30% {
+		opacity: 0.8;
+		transform: translate(-2px, 1px);
+	}
+	40% {
+		opacity: 0.8;
+		transform: translate(1px, -1px);
+	}
+	50% {
+		opacity: 0.8;
+		transform: translate(-1px, 2px);
+	}
+	60% {
+		opacity: 0.8;
+		transform: translate(3px, 1px);
+	}
+	70% {
+		opacity: 0.8;
+		transform: translate(-1px, -1px);
+	}
+	80% {
+		opacity: 0.8;
+		transform: translate(2px, 2px);
+	}
+	90% {
+		opacity: 0.8;
+		transform: translate(-2px, -2px);
+	}
+	100% {
+		opacity: 0;
+		transform: translate(0);
+	}
+}
+
+@keyframes glitch-after {
+	0% {
+		opacity: 0;
+		transform: translate(0);
+	}
+	10% {
+		opacity: 0.8;
+		transform: translate(2px, -2px);
+	}
+	20% {
+		opacity: 0.8;
+		transform: translate(-2px, 2px);
+	}
+	30% {
+		opacity: 0.8;
+		transform: translate(1px, -1px);
+	}
+	40% {
+		opacity: 0.8;
+		transform: translate(-1px, 1px);
+	}
+	50% {
+		opacity: 0.8;
+		transform: translate(2px, -1px);
+	}
+	60% {
+		opacity: 0.8;
+		transform: translate(-3px, -1px);
+	}
+	70% {
+		opacity: 0.8;
+		transform: translate(1px, 1px);
+	}
+	80% {
+		opacity: 0.8;
+		transform: translate(-2px, -2px);
+	}
+	90% {
+		opacity: 0.8;
+		transform: translate(2px, 2px);
+	}
+	100% {
+		opacity: 0;
+		transform: translate(0);
+	}
+}
+
+/* Disable glitch for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	.glitch-text,
+	.glitch-text::before,
+	.glitch-text::after {
+		animation: none !important;
+	}
+}
