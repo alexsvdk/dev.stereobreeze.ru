@@ -694,32 +694,16 @@ section h2::before {
 	display: flex;
 	gap: 1rem;
 	margin-bottom: 2rem;
-	overflow-x: auto;
+	overflow-x: hidden; /* Disable manual scrolling */
 	overflow-y: visible; /* Prevent clipping on hover */
-	scroll-behavior: smooth;
 	-webkit-overflow-scrolling: touch;
-	scrollbar-width: thin;
-	scrollbar-color: rgba(0, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
 	padding: 0.5rem 0 1rem; /* Extra space for hover lift */
+	pointer-events: none; /* Disable mouse interaction with scroll area */
 }
 
-/* Custom scrollbar for webkit browsers */
-.project-screenshots-grid::-webkit-scrollbar {
-	height: 8px;
-}
-
-.project-screenshots-grid::-webkit-scrollbar-track {
-	background: rgba(255, 255, 255, 0.05);
-	border-radius: 4px;
-}
-
-.project-screenshots-grid::-webkit-scrollbar-thumb {
-	background: rgba(0, 255, 255, 0.3);
-	border-radius: 4px;
-}
-
-.project-screenshots-grid::-webkit-scrollbar-thumb:hover {
-	background: rgba(0, 255, 255, 0.5);
+/* Re-enable pointer events for screenshots */
+.project-screenshots-grid > * {
+	pointer-events: auto;
 }
 
 .project-screenshot {
@@ -970,41 +954,6 @@ section h2::before {
 
 /* Responsive Design - Story 2.7 */
 
-/* Hamburger Menu Button */
-.hamburger {
-	display: none;
-	flex-direction: column;
-	justify-content: space-around;
-	width: 44px;
-	height: 44px;
-	background: transparent;
-	border: none;
-	cursor: pointer;
-	padding: 8px;
-	z-index: 1001;
-}
-
-.hamburger span {
-	width: 28px;
-	height: 3px;
-	background: var(--color-cyan);
-	border-radius: 2px;
-	transition: all 0.3s ease;
-	display: block;
-}
-
-.hamburger[aria-expanded="true"] span:nth-child(1) {
-	transform: rotate(45deg) translateY(10px);
-}
-
-.hamburger[aria-expanded="true"] span:nth-child(2) {
-	opacity: 0;
-}
-
-.hamburger[aria-expanded="true"] span:nth-child(3) {
-	transform: rotate(-45deg) translateY(-10px);
-}
-
 /* Mobile Breakpoint: 320px-767px */
 @media (max-width: 767px) {
 	/* Typography scaling */
@@ -1029,50 +978,9 @@ section h2::before {
 		padding: 3rem 1rem;
 	}
 	
-	/* Hamburger menu visible */
-	.hamburger {
-		display: flex;
-	}
-	
-	/* Navigation menu */
+	/* Hide navigation completely on mobile */
 	#navigation {
-		padding: 1rem;
-	}
-	
-	.nav-menu {
-		position: fixed;
-		top: 60px;
-		left: 0;
-		right: 0;
-		background: rgba(10, 10, 10, 0.98);
-		backdrop-filter: blur(20px);
-		flex-direction: column;
-		gap: 0 !important;
-		max-height: 0;
-		overflow: hidden;
-		transition: max-height 0.3s ease;
-		border-bottom: 1px solid rgba(0, 255, 255, 0.2);
-	}
-	
-	.nav-menu.open {
-		max-height: 400px;
-	}
-	
-	.nav-menu li {
-		width: 100%;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-	}
-	
-	.nav-menu li:last-child {
-		border-bottom: none;
-	}
-	
-	.nav-menu a {
-		display: block;
-		width: 100%;
-		padding: 1rem 1.5rem;
-		text-align: left;
-		min-height: 44px;
+		display: none;
 	}
 	
 	/* Hero adjustments already in place */

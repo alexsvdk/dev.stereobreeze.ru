@@ -138,15 +138,6 @@ import "../styles/global.css";
 	<body>
 		<!-- Navigation -->
 		<nav id="navigation">
-			<button
-				class="hamburger"
-				aria-label="Открыть меню"
-				aria-expanded="false"
-			>
-				<span></span>
-				<span></span>
-				<span></span>
-			</button>
 			<ul class="nav-menu">
 				<li><a href="#about" data-i18n="nav.about">О себе</a></li>
 				<li>
@@ -1133,36 +1124,11 @@ import "../styles/global.css";
 							targetSection.scrollIntoView({
 								behavior: "smooth",
 							});
-							// Close mobile menu after click - Story 2.7
-							const navMenu = document.querySelector(".nav-menu");
-							const hamburger =
-								document.querySelector(".hamburger");
-							if (navMenu && hamburger) {
-								navMenu.classList.remove("open");
-								hamburger.setAttribute(
-									"aria-expanded",
-									"false",
-								);
-							}
 						}
 					});
 				});
 
-				// Hamburger menu toggle - Story 2.7
-				const hamburger = document.querySelector(".hamburger");
-				const navMenu = document.querySelector(".nav-menu");
-
-				if (hamburger && navMenu) {
-					hamburger.addEventListener("click", () => {
-						const isExpanded =
-							hamburger.getAttribute("aria-expanded") === "true";
-						hamburger.setAttribute(
-							"aria-expanded",
-							!isExpanded ? "true" : "false",
-						);
-						navMenu.classList.toggle("open");
-					});
-				} // Skills: Animate stars on scroll into view - Story 2.5
+				// Skills: Animate stars on scroll into view - Story 2.5
 				const skillItems = document.querySelectorAll(".skill-item");
 				const skillObserverOptions = {
 					root: null,
@@ -1252,19 +1218,9 @@ import "../styles/global.css";
 					const scrollSpeed = 0.05; // pixels per frame (10x slower)
 					const maxScroll = grid.scrollWidth - grid.clientWidth;
 
-					// Pause auto-scroll on hover
-					let isPaused = false;
-					grid.addEventListener("mouseenter", () => {
-						isPaused = true;
-					});
-
-					grid.addEventListener("mouseleave", () => {
-						isPaused = false;
-					});
-
-					// Continuous auto-scroll with pause on hover
+					// Continuous auto-scroll (no pause on hover)
 					function autoScroll() {
-						if (!isPaused && maxScroll > 0) {
+						if (maxScroll > 0) {
 							scrollAmount += scrollSpeed;
 							if (scrollAmount >= maxScroll) {
 								scrollAmount = 0;
