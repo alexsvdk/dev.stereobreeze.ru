@@ -742,3 +742,206 @@ section h2::before {
 		margin-bottom: 1rem;
 	}
 }
+
+/* Responsive Design - Story 2.7 */
+
+/* Hamburger Menu Button */
+.hamburger {
+	display: none;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 44px;
+	height: 44px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 8px;
+	z-index: 1001;
+}
+
+.hamburger span {
+	width: 28px;
+	height: 3px;
+	background: var(--color-cyan);
+	border-radius: 2px;
+	transition: all 0.3s ease;
+	display: block;
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(1) {
+	transform: rotate(45deg) translateY(10px);
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(2) {
+	opacity: 0;
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(3) {
+	transform: rotate(-45deg) translateY(-10px);
+}
+
+/* Mobile Breakpoint: 320px-767px */
+@media (max-width: 767px) {
+	/* Typography scaling */
+	h1 {
+		font-size: 2rem; /* 32px */
+	}
+	
+	h2 {
+		font-size: 1.75rem; /* 28px */
+	}
+	
+	h3 {
+		font-size: 1.25rem; /* 20px */
+	}
+	
+	p, li {
+		font-size: 1rem; /* 16px */
+	}
+	
+	/* Sections */
+	section {
+		padding: 3rem 1rem;
+	}
+	
+	/* Hamburger menu visible */
+	.hamburger {
+		display: flex;
+	}
+	
+	/* Navigation menu */
+	#navigation {
+		padding: 1rem;
+	}
+	
+	.nav-menu {
+		position: fixed;
+		top: 60px;
+		left: 0;
+		right: 0;
+		background: rgba(10, 10, 10, 0.98);
+		backdrop-filter: blur(20px);
+		flex-direction: column;
+		gap: 0 !important;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease;
+		border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+	}
+	
+	.nav-menu.open {
+		max-height: 400px;
+	}
+	
+	.nav-menu li {
+		width: 100%;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	}
+	
+	.nav-menu li:last-child {
+		border-bottom: none;
+	}
+	
+	.nav-menu a {
+		display: block;
+		width: 100%;
+		padding: 1rem 1.5rem;
+		text-align: left;
+		min-height: 44px;
+	}
+	
+	/* Hero adjustments already in place */
+	
+	/* Experience - single column */
+	.experience-item {
+		margin-bottom: 2.5rem;
+	}
+	
+	/* Project links */
+	.project-links {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+	
+	.project-links a {
+		min-height: 44px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	/* CTA Buttons - Touch targets */
+	.cta-button,
+	a[href^="http"],
+	button {
+		min-height: 44px;
+		min-width: 44px;
+		padding: 0.875rem 1.5rem;
+	}
+	
+	/* Speaking section */
+	.speaking-category {
+		margin-bottom: 3rem;
+	}
+	
+	/* Contact section */
+	#contact {
+		text-align: center;
+	}
+	
+	/* Prevent horizontal scroll */
+	body {
+		overflow-x: hidden;
+	}
+	
+	section {
+		overflow-x: hidden;
+	}
+	
+	/* Images responsive */
+	img,
+	video {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+/* Tablet Breakpoint: 768px-1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+	/* Typography scaling */
+	h1 {
+		font-size: 2.25rem; /* 36px */
+	}
+	
+	h2 {
+		font-size: 1.875rem; /* 30px */
+	}
+	
+	/* Sections */
+	section {
+		padding: 4rem 2rem;
+	}
+	
+	/* Skills grid */
+	.skills-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	
+	/* Portfolio screenshots */
+	.project-screenshots-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	
+	/* Experience - could do 2 columns if needed */
+	/* Currently single column is fine for tablet */
+}
+
+/* Desktop fine-tuning: 1024px+ */
+@media (min-width: 1024px) {
+	/* Navigation centered layout already good */
+	
+	/* Skills: 4 columns (already auto-fit) */
+	
+	/* Portfolio: screenshots responsive (already handled) */
+}
