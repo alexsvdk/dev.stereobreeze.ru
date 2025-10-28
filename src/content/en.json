@@ -176,5 +176,9 @@
   },
   "footer": {
     "copyright": "© 2025 Alexey Shvedchikov"
+  },
+  "overtime": {
+    "title": "🚀 Overtime Mode Activated!",
+    "message": "But you should rest sometimes 😄"
   }
 }
