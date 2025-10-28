@@ -25,41 +25,40 @@ jobs:
       - name: Build project
         run: npm run build
       
-      - name: Configure AWS CLI for Yandex Cloud
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.YC_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.YC_SECRET_ACCESS_KEY }}
-          aws-region: ru-central1
-      
       - name: Deploy static assets to S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.YC_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.YC_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ru-central1
         run: |
-          aws \
-            --endpoint-url https://storage.yandexcloud.net/ \
-          s3 --endpoint-url=https://storage.yandexcloud.net \
-          sync dist/ s3://dev.stereobreeze.ru \
+          aws s3 sync dist/ s3://dev.stereobreeze.ru \
+            --endpoint-url=https://storage.yandexcloud.net \
             --cache-control "public, max-age=31536000, immutable" \
             --exclude "*.html" \
             --exclude "*.json" \
             --delete
       
       - name: Deploy HTML files to S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.YC_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.YC_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ru-central1
         run: |
-          aws \
-            --endpoint-url https://storage.yandexcloud.net/ \
-          s3 --endpoint-url=https://storage.yandexcloud.net \
-          sync dist/ s3://dev.stereobreeze.ru \
+          aws s3 sync dist/ s3://dev.stereobreeze.ru \
+            --endpoint-url=https://storage.yandexcloud.net \
             --cache-control "public, max-age=0, must-revalidate" \
             --exclude "*" \
             --include "*.html" \
             --delete
       
       - name: Deploy JSON files to S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.YC_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.YC_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ru-central1
         run: |
-          aws \
-            --endpoint-url https://storage.yandexcloud.net/ \
-          s3 --endpoint-url=https://storage.yandexcloud.net \
-          sync dist/ s3://dev.stereobreeze.ru \
+          aws s3 sync dist/ s3://dev.stereobreeze.ru \
+            --endpoint-url=https://storage.yandexcloud.net \
             --cache-control "public, max-age=3600" \
             --exclude "*" \
             --include "*.json" \
