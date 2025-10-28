@@ -1067,6 +1067,10 @@ section h2::before {
 		gap: 0.75rem;
 	}
 	
+	.link-separator {
+		display: none; /* Hide on mobile */
+	}
+	
 	.project-links a {
 		min-height: 44px;
 		display: flex;
@@ -1147,6 +1151,19 @@ section h2::before {
 	/* Skills: 4 columns (already auto-fit) */
 	
 	/* Portfolio: screenshots responsive (already handled) */
+	
+	/* Project links - horizontal with separators */
+	.project-links {
+		flex-direction: row;
+		align-items: center;
+		gap: 1rem;
+	}
+	
+	.link-separator {
+		display: inline;
+		color: var(--color-cyan);
+		opacity: 0.5;
+	}
 }
 
 /* Contact Section - Redesigned */
@@ -1211,8 +1228,10 @@ section h2::before {
 	box-shadow: 0 8px 24px rgba(0, 255, 255, 0.5);
 }
 
-.button-icon {
-	font-size: 1.5rem;
+.telegram-icon {
+	width: 24px;
+	height: 24px;
+	flex-shrink: 0;
 }
 
 .contact-links {
