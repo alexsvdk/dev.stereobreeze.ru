@@ -870,9 +870,9 @@ section h2::before {
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	width: 120px;
-	height: 120px;
-	background: radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%);
+	width: 160px;
+	height: 160px;
+	background: radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
 	pointer-events: none;
 }
 
@@ -893,6 +893,11 @@ section h2::before {
 	padding: 0;
 	filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.9));
 	z-index: 1;
+}
+
+/* Invert Yandex logo colors */
+.talk-logo[src*="yandex"] {
+	filter: invert(1) brightness(1.2) drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.9));
 }
 
 .talk-image-placeholder {
