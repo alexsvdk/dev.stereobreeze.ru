@@ -1,16 +1,186 @@
 ---
-
+// Portfolio Website - Main Page
 ---
 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ru">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Alexey Shvedchikov - Flutter Developer | Portfolio</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<!-- Navigation -->
+		<nav id="navigation">
+			<ul>
+				<li><a href="#about">About</a></li>
+				<li><a href="#experience">Experience</a></li>
+				<li><a href="#skills">Skills</a></li>
+				<li><a href="#portfolio">Portfolio</a></li>
+				<li><a href="#speaking">Speaking</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+
+		<!-- Hero Section -->
+		<header id="hero">
+			<h1>Hero Section</h1>
+			<p>Name and tagline placeholder</p>
+			<a href="#contact">CTA Button</a>
+		</header>
+
+		<!-- About Section -->
+		<section id="about">
+			<h2>About</h2>
+			<p>Personal text placeholder (3-4 paragraphs)</p>
+			<ul>
+				<li>Key fact 1</li>
+				<li>Key fact 2</li>
+				<li>Key fact 3</li>
+			</ul>
+		</section>
+
+		<!-- Experience Section -->
+		<section id="experience">
+			<h2>Experience</h2>
+			
+			<article>
+				<h3>Company 1</h3>
+				<p>Position, Period</p>
+				<ul>
+					<li>Achievement 1</li>
+					<li>Achievement 2</li>
+					<li>Achievement 3</li>
+				</ul>
+			</article>
+
+			<article>
+				<h3>Company 2</h3>
+				<p>Position, Period</p>
+				<ul>
+					<li>Achievement 1</li>
+					<li>Achievement 2</li>
+				</ul>
+			</article>
+
+			<article>
+				<h3>Company 3</h3>
+				<p>Position, Period</p>
+				<ul>
+					<li>Achievement 1</li>
+				</ul>
+			</article>
+		</section>
+
+		<!-- Skills Section -->
+		<section id="skills">
+			<h2>Skills</h2>
+			
+			<div class="skill-category">
+				<h3>Mobile Development</h3>
+				<ul>
+					<li>Dart / Flutter</li>
+					<li>Kotlin / Android</li>
+					<li>iOS (SwiftUI)</li>
+				</ul>
+			</div>
+
+			<div class="skill-category">
+				<h3>Backend</h3>
+				<ul>
+					<li>Kotlin / Ktor</li>
+					<li>REST API, GraphQL</li>
+					<li>Docker / Kubernetes</li>
+				</ul>
+			</div>
+
+			<div class="skill-category">
+				<h3>DevOps & Infrastructure</h3>
+				<ul>
+					<li>CI/CD</li>
+					<li>Fastlane</li>
+					<li>Git</li>
+				</ul>
+			</div>
+
+			<div class="skill-category">
+				<h3>Soft Skills</h3>
+				<ul>
+					<li>Leadership</li>
+					<li>Mentorship</li>
+					<li>Communication</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Portfolio Section -->
+		<section id="portfolio">
+			<h2>Portfolio</h2>
+
+			<article class="project">
+				<h3>Project 1</h3>
+				<p>Description placeholder</p>
+				<p>Technologies: Tech stack</p>
+				<a href="#">Link</a>
+			</article>
+
+			<article class="project">
+				<h3>Project 2</h3>
+				<p>Description placeholder</p>
+				<p>Technologies: Tech stack</p>
+				<a href="#">Link</a>
+			</article>
+
+			<article class="project">
+				<h3>Project 3</h3>
+				<p>Description placeholder</p>
+				<p>Technologies: Tech stack</p>
+			</article>
+		</section>
+
+		<!-- Speaking Section -->
+		<section id="speaking">
+			<h2>Speaking</h2>
+
+			<article class="talk">
+				<h3>Conference 1</h3>
+				<p>Talk title</p>
+				<a href="#">Video link</a>
+			</article>
+
+			<article class="talk">
+				<h3>Conference 2</h3>
+				<p>Talk title</p>
+				<a href="#">Video link</a>
+			</article>
+
+			<article class="talk">
+				<h3>Lecture 1</h3>
+				<p>Topic</p>
+			</article>
+		</section>
+
+		<!-- Contact Section -->
+		<section id="contact">
+			<h2>Contact</h2>
+			<a href="https://t.me/a1exs_dev" class="telegram-button">Write to Telegram</a>
+			<p>Social links placeholder</p>
+			<ul>
+				<li><a href="https://github.com/alexsvdk">GitHub</a></li>
+				<li><a href="https://www.linkedin.com/in/a1exs/">LinkedIn</a></li>
+				<li><a href="mailto:alex.svdk@gmail.com">Email</a></li>
+			</ul>
+		</section>
+
+		<!-- Footer -->
+		<footer>
+			<p>&copy; 2025 Alexey Shvedchikov</p>
+			<div class="language-switcher">
+				<button>RU</button>
+				<button>EN</button>
+			</div>
+		</footer>
 	</body>
 </html>
