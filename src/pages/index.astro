@@ -26,13 +26,19 @@ import '../styles/global.css';
 		</nav>
 
 		<!-- Hero Section -->
-		<header id="hero">
-			<h1>Алексей Шведчиков</h1>
-			<p>Ведущий Flutter-разработчик<br>Делаю проекты под ключ — от MVP до enterprise</p>
-			<a href="#contact" class="cta-button">Написать в Telegram</a>
-		</header>
-
-		<!-- About Section -->
+		<section id="hero">
+			<div class="hero-video-container">
+				<video class="hero-video" autoplay muted loop playsinline poster="/images/hero-poster.png">
+					<source src="/video/hero-background.mp4" type="video/mp4">
+				</video>
+				<div class="hero-overlay"></div>
+			</div>
+			<div class="hero-content">
+				<h1 class="glitch-text">Алексей Шведчиков</h1>
+				<p>Руководитель разработки, Fullstack-разработчик, Архитектор решений</p>
+				<a href="#contact" class="cta-button">Связаться со мной</a>
+			</div>
+		</section>		<!-- About Section -->
 		<section id="about">
 			<h2>О себе</h2>
 			<p>Ведущий Flutter-разработчик с 6 годами опыта. Работаю над проектами от стартап-MVP до enterprise-систем с миллионами пользователей. В Яндексе руковожу командой и проектирую архитектуру для 100+ разработчиков.</p>
