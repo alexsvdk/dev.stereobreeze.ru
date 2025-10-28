@@ -56,9 +56,14 @@ import '../styles/global.css';
 			<h2>Опыт работы</h2>
 			
 			<article class="experience-item">
-				<h3>Яндекс</h3>
-				<p class="position">Ведущий Flutter-разработчик</p>
-				<p class="period">Июнь 2021 — настоящее время</p>
+				<div class="experience-header">
+					<img src="/images/logos/yandex-2.svg" alt="Яндекс" class="company-logo" loading="lazy" />
+					<div class="experience-title-group">
+						<h3>Яндекс</h3>
+						<p class="position">Ведущий Flutter-разработчик</p>
+						<p class="period">Июнь 2021 — настоящее время</p>
+					</div>
+				</div>
 				<p class="description">Разрабатываю Яндекс Про — суперап для водителей, курьеров и самозанятых. Более 1 миллиона активных пользователей. Владею полным циклом: от проектирования клиент-серверного взаимодействия до руководства кросс-функциональными командами. Провожу код-ревью и архитектурные ревью, автоматизирую процессы.</p>
 				<ul>
 					<li>Спроектировал архитектуру фича-модулей для команды из 100+ разработчиков, унифицировал интеграции между модулями</li>
@@ -71,10 +76,17 @@ import '../styles/global.css';
 				<p class="tech">Flutter • Dart • BLoC • Clean Architecture • CI/CD</p>
 			</article>
 
+			<hr class="section-divider" />
+
 			<article class="experience-item">
-				<h3>Black Star</h3>
-				<p class="position">Fullstack-разработчик</p>
-				<p class="period">Февраль 2020 — Июнь 2021</p>
+				<div class="experience-header">
+					<div class="company-logo-placeholder">BS</div>
+					<div class="experience-title-group">
+						<h3>Black Star</h3>
+						<p class="position">Fullstack-разработчик</p>
+						<p class="period">Февраль 2020 — Июнь 2021</p>
+					</div>
+				</div>
 				<p class="description">Разработал с нуля и выпустил два мобильных приложения: WowChef (кулинарное приложение) и Black Star Fitness. Работал solo-разработчиком.</p>
 				<ul>
 					<li>Создал кроссплатформенные приложения на Flutter</li>
@@ -86,10 +98,17 @@ import '../styles/global.css';
 				<p class="tech">Flutter • Kotlin/Ktor • React • Kubernetes • Docker • CI/CD</p>
 			</article>
 
+			<hr class="section-divider" />
+
 			<article class="experience-item">
-				<h3>IT Школа Samsung</h3>
-				<p class="position">Преподаватель</p>
-				<p class="period">Сентябрь 2019 — Май 2022</p>
+				<div class="experience-header">
+					<img src="/images/logos/samsung-8.svg" alt="Samsung" class="company-logo" loading="lazy" />
+					<div class="experience-title-group">
+						<h3>IT Школа Samsung</h3>
+						<p class="position">Преподаватель</p>
+						<p class="period">Сентябрь 2019 — Май 2022</p>
+					</div>
+				</div>
 				<p class="description">Преподавал Android-разработку и язык Java. Обучил 3 потока студентов основам мобильной разработки и объектно-ориентированному программированию.</p>
 			</article>
 		</section>
@@ -303,8 +322,18 @@ import '../styles/global.css';
 			</article>
 
 			<article class="project">
-				<h3>WowChef</h3>
-				<p class="project-subtitle">Кулинарное приложение (архивный проект)</p>
+				<div class="project-header">
+					<img 
+						src="/images/logos/wowchef.png" 
+						alt="WowChef logo" 
+						class="project-logo"
+						loading="lazy"
+					/>
+					<div class="project-title-group">
+						<h3>WowChef</h3>
+						<p class="project-subtitle">Кулинарное приложение (архивный проект)</p>
+					</div>
+				</div>
 				<p class="project-description">Кулинарное приложение с рецептами и видеоинструкциями. Реализованы функции избранного, поиска по категориям, пошаговые инструкции с таймерами, покупка подписки через магазины. Разработал fullstack: Flutter-приложение, backend на Kotlin/Ktor, админ-панель на React.</p>
 				<p class="project-status">Статус: Проект перестал поддерживаться</p>
 				<p class="project-tech">Flutter • Kotlin/Ktor • React • Kubernetes</p>
@@ -315,83 +344,118 @@ import '../styles/global.css';
 		<!-- Speaking Section -->
 		<section id="speaking">
 			<h2>Выступления</h2>
-			<p class="section-subtitle">Конференции и лекции</p>
+			
+			<div class="speaking-grid">
+				<a href="https://www.youtube.com/watch?v=I2WOcO15fdI" target="_blank" rel="noopener" class="talk-card">
+					<div class="talk-image-container">
+						<img src="/images/speaking/cross conf 2022.png" alt="CrossConf 2022" class="talk-image" loading="lazy" />
+						<img src="/images/speaking/cross-conf-logo.svg" alt="CrossConf logo" class="talk-logo" loading="lazy" />
+					</div>
+					<div class="talk-content">
+						<h3>CrossConf 2022</h3>
+						<p class="talk-title">"За безопасный Flutter"</p>
+						<p class="talk-description">Доклад о практиках безопасной разработки на Flutter</p>
+						<span class="talk-link-text">Смотреть на YouTube →</span>
+					</div>
+				</a>
 
-			<div class="speaking-category">
-				<h3>Конференции</h3>
+				<a href="https://www.youtube.com/watch?v=ThtVERWO8rw" target="_blank" rel="noopener" class="talk-card">
+					<div class="talk-image-container">
+						<img src="/images/speaking/merge conf 2022.png" alt="MergeConf 2022" class="talk-image" loading="lazy" />
+						<img src="/images/speaking/merge-conf-logo.svg" alt="MergeConf logo" class="talk-logo" loading="lazy" />
+					</div>
+					<div class="talk-content">
+						<h3>MergeConf 2022</h3>
+						<p class="talk-title">"Эволюционная архитектура"</p>
+						<p class="talk-description">Как проектировать архитектуру, которая растет вместе с продуктом</p>
+						<span class="talk-link-text">Смотреть на YouTube →</span>
+					</div>
+				</a>
 
-				<article class="talk">
-					<h4>CrossConf 2022</h4>
-					<p>"За безопасный Flutter"</p>
-					<p class="talk-description">Доклад о практиках безопасной разработки на Flutter</p>
-					<a href="https://www.youtube.com/watch?v=I2WOcO15fdI" target="_blank" rel="noopener">Смотреть на YouTube →</a>
-				</article>
+				<a href="https://surf-studio.timepad.ru/event/2106561/" target="_blank" rel="noopener" class="talk-card">
+					<div class="talk-image-container">
+						<div class="talk-image-placeholder">
+							<span>🎤</span>
+						</div>
+					</div>
+					<div class="talk-content">
+						<h3>Митап Surf 2022</h3>
+						<p class="talk-title">Выступление на митапе мобильных разработчиков</p>
+						<p class="talk-description">Обсуждение лучших практик разработки</p>
+						<span class="talk-link-text">Подробнее →</span>
+					</div>
+				</a>
 
-				<article class="talk">
-					<h4>MergeConf 2022</h4>
-					<p>"Эволюционная архитектура"</p>
-					<p class="talk-description">Как проектировать архитектуру, которая растет вместе с продуктом</p>
-					<a href="https://www.youtube.com/watch?v=ThtVERWO8rw" target="_blank" rel="noopener">Смотреть на YouTube →</a>
-				</article>
+				<a href="https://www.youtube.com/live/oBJ2SLfijYI" target="_blank" rel="noopener" class="talk-card">
+					<div class="talk-image-container">
+						<img src="/images/speaking/Лекция по безопасности.png" alt="Лекция по безопасности" class="talk-image" loading="lazy" />
+						<img src="/images/logos/yandex-2.svg" alt="Яндекс" class="talk-logo" loading="lazy" />
+					</div>
+					<div class="talk-content">
+						<h3>Школа мобильной разработки Яндекса</h3>
+						<p class="talk-title">"Безопасность в мобильной разработке"</p>
+						<p class="talk-description">Лекция о практиках защиты данных и безопасного кода</p>
+						<span class="talk-link-text">Смотреть на YouTube →</span>
+					</div>
+				</a>
 
-				<article class="talk">
-					<h4>Митап Surf 2022</h4>
-					<p>Выступление на митапе мобильных разработчиков</p>
-					<a href="https://surf-studio.timepad.ru/event/2106561/" target="_blank" rel="noopener">Подробнее →</a>
-				</article>
-			</div>
+				<a href="https://www.youtube.com/watch?v=OWcK32Ir6J4" target="_blank" rel="noopener" class="talk-card">
+					<div class="talk-image-container">
+						<img src="/images/speaking/Лекция по архитектуре.png" alt="Лекция по архитектуре" class="talk-image" loading="lazy" />
+						<img src="/images/logos/yandex-2.svg" alt="Яндекс" class="talk-logo" loading="lazy" />
+					</div>
+					<div class="talk-content">
+						<h3>Школа мобильной разработки Яндекса</h3>
+						<p class="talk-title">"Архитектура мобильных приложений"</p>
+						<p class="talk-description">Паттерны проектирования и масштабируемая архитектура</p>
+						<span class="talk-link-text">Смотреть на YouTube →</span>
+					</div>
+				</a>
 
-			<div class="speaking-category">
-				<h3>Лекции</h3>
-
-				<article class="talk">
-					<h4>Школа мобильной разработки Яндекса</h4>
-					<p>"Безопасность в мобильной разработке"</p>
-					<p class="talk-description">Лекция о практиках защиты данных и безопасного кода</p>
-					<a href="https://www.youtube.com/live/oBJ2SLfijYI" target="_blank" rel="noopener">Смотреть на YouTube →</a>
-				</article>
-
-				<article class="talk">
-					<h4>Школа мобильной разработки Яндекса</h4>
-					<p>"Архитектура мобильных приложений"</p>
-					<p class="talk-description">Паттерны проектирования и масштабируемая архитектура</p>
-					<a href="https://www.youtube.com/watch?v=OWcK32Ir6J4" target="_blank" rel="noopener">Смотреть на YouTube →</a>
-				</article>
-
-				<article class="talk">
-					<h4>МТУСИ</h4>
-					<p>Преподавание Flutter-разработки</p>
-					<p class="talk-description">Ведение курса по разработке мобильных приложений</p>
-				</article>
+				<div class="talk-card talk-card-static">
+					<div class="talk-image-container">
+						<div class="talk-image-placeholder">
+							<span>🎓</span>
+						</div>
+					</div>
+					<div class="talk-content">
+						<h3>МТУСИ</h3>
+						<p class="talk-title">Преподавание Flutter-разработки</p>
+						<p class="talk-description">Ведение курса по разработке мобильных приложений</p>
+					</div>
+				</div>
 			</div>
 		</section>
 
 		<!-- Contact Section -->
 		<section id="contact">
-			<div class="contact-container">
-				<h2>Свяжитесь со мной</h2>
-				<p class="contact-intro">Открыт для интересных проектов и предложений о сотрудничестве.</p>
-				<p class="contact-hint">Если долго не отвечаю — возможно я <span class="overtime-link">overtime</span></p>
+			<h2>Свяжитесь со мной</h2>
+			
+			<div class="contact-grid">
+				<div class="contact-main">
+					<p class="contact-intro">Открыт для интересных проектов и предложений о сотрудничестве.</p>
+					<p class="contact-hint">Если долго не отвечаю — возможно я <span class="overtime-link">overtime</span></p>
+					
+					<a href="https://t.me/a1exs_dev" class="telegram-button" target="_blank" rel="noopener">
+						<span class="button-icon">📱</span>
+						<span>Написать в Telegram</span>
+					</a>
+				</div>
 				
-				<a href="https://t.me/a1exs_dev" class="telegram-button" target="_blank" rel="noopener">
-					<span class="button-icon">📱</span>
-					Написать в Telegram
-				</a>
-				
-				<div class="social-links">
-					<h3>Также можно найти здесь:</h3>
-					<div class="social-grid">
-						<a href="https://github.com/alexsvdk" target="_blank" rel="noopener" class="social-link">
-							<span class="social-icon">🔗</span>
+				<div class="contact-links">
+					<h3>Другие способы связи</h3>
+					<div class="contact-links-list">
+						<a href="https://github.com/alexsvdk" target="_blank" rel="noopener" class="contact-link">
+							<img src="/images/logos/github-icon-1.svg" alt="GitHub" class="contact-icon" loading="lazy" />
 							<span>GitHub</span>
 						</a>
-						<a href="https://www.linkedin.com/in/a1exs/" target="_blank" rel="noopener" class="social-link">
-							<span class="social-icon">💼</span>
+						<a href="https://www.linkedin.com/in/a1exs/" target="_blank" rel="noopener" class="contact-link">
+							<img src="/images/logos/linkedin-icon-1.svg" alt="LinkedIn" class="contact-icon" loading="lazy" />
 							<span>LinkedIn</span>
 						</a>
-						<a href="mailto:alex.svdk@gmail.com" class="social-link">
-							<span class="social-icon">✉️</span>
-							<span>Email</span>
+						<a href="mailto:alex.svdk@gmail.com" class="contact-link">
+							<img src="/images/logos/mail-ios.svg" alt="Email" class="contact-icon" loading="lazy" />
+							<span>alex.svdk@gmail.com</span>
 						</a>
 					</div>
 				</div>
