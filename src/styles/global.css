@@ -1328,3 +1328,43 @@ section h2::before {
 		padding: 1.5rem 1rem; /* Keep 1.5x height on mobile too */
 	}
 }
+
+/* Footer & Language Switcher */
+footer {
+	text-align: center;
+	padding: 2rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	margin-top: 4rem;
+}
+
+.language-switcher {
+	display: flex;
+	gap: 0.5rem;
+	justify-content: center;
+	margin-top: 1rem;
+}
+
+.language-switcher button {
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(0, 255, 255, 0.2);
+	color: rgba(255, 255, 255, 0.6);
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-size: 0.875rem;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.language-switcher button:hover {
+	border-color: var(--color-cyan);
+	color: var(--color-cyan);
+	background: rgba(0, 255, 255, 0.1);
+}
+
+.language-switcher button.active {
+	border-color: var(--color-cyan);
+	color: var(--color-cyan);
+	background: rgba(0, 255, 255, 0.15);
+}

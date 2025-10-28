@@ -1,0 +1,161 @@
+{
+  "hero": {
+    "name": "ALEXEY SHVEDCHIKOV",
+    "tagline": "Senior Flutter Developer\nDelivering turnkey projects — from MVP to enterprise",
+    "cta": "Message on Telegram"
+  },
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "portfolio": "Projects",
+    "speaking": "Speaking",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About Me",
+    "text": "Senior Flutter Developer with 6 years of experience. I work on projects ranging from startup MVPs to enterprise systems with millions of users. At Yandex, I lead a development team and architect solutions for 100+ developers.\n\nI'm motivated by creating quality, reliable solutions. I work with integrity — ensuring everything is rock-solid. I love complex technical challenges where you need to make the impossible possible.\n\nBeyond code, I write music and speak at conferences. This develops creative thinking and helps me find unconventional solutions in development."
+  },
+  "experience": {
+    "title": "Experience",
+    "jobs": [
+      {
+        "company": "Yandex",
+        "role": "Senior Flutter Developer",
+        "period": "June 2021 — Present",
+        "description": "Developing Yandex Pro — a super-app for drivers, couriers, and self-employed professionals with over 1 million active users.\n\nI own the full cycle: from designing client-server interactions to leading cross-functional teams. I conduct code reviews and architecture reviews, and automate processes.",
+        "achievements": [
+          "Designed feature module architecture for a team of 100+ developers, unified integrations between modules",
+          "Developed a redirection protocol for dynamically adding new logic branches without app updates",
+          "Implemented an AI bot for classifying and routing bug reports, reducing on-call developer workload",
+          "Mentored 5 interns to middle developer level",
+          "Conducted over 100 technical interviews on Flutter and algorithms",
+          "Led a major NDA project, coordinating internal teams and two contractors"
+        ],
+        "tech": "Flutter • Dart • BLoC • Clean Architecture • CI/CD"
+      },
+      {
+        "company": "Samsung",
+        "role": "Instructor",
+        "period": "September 2019 — May 2022",
+        "description": "Taught Android development and Java. Trained 3 cohorts of students in mobile development fundamentals and object-oriented programming."
+      }
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "categories": [
+      {
+        "name": "Mobile Development",
+        "items": [
+          "Dart / Flutter (6 years)",
+          "Kotlin / Android SDK (7 years)",
+          "State Management (Provider, Riverpod, BLoC)",
+          "Clean Architecture, MVVM"
+        ]
+      },
+      {
+        "name": "Backend & API",
+        "items": [
+          "Kotlin / Ktor",
+          "REST API, GraphQL",
+          "Client-server interaction design"
+        ]
+      },
+      {
+        "name": "DevOps & Infrastructure",
+        "items": [
+          "Docker / Kubernetes",
+          "CI/CD (GitHub Actions, GitLab CI)",
+          "Fastlane",
+          "Process automation"
+        ]
+      },
+      {
+        "name": "Leadership & Process",
+        "items": [
+          "Team leadership (3 people)",
+          "Mentoring and developer growth",
+          "Code review and architecture review",
+          "Hiring and conducting interviews",
+          "Agile / Scrum"
+        ]
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Projects",
+    "projects": [
+      {
+        "name": "Yandex Pro",
+        "subtitle": "Super-app for professionals",
+        "description": "Mobile application combining Yandex services for drivers, couriers, and self-employed professionals. Over 1 million active users.",
+        "role": "Senior Flutter Developer, Technical Lead",
+        "tech": "Flutter • Dart • BLoC • Clean Architecture"
+      },
+      {
+        "name": "Era of Change",
+        "subtitle": "Crypto news and analytics",
+        "description": "Mobile app with cryptocurrency and blockchain news and analytics. Features 4 subscription tiers with payments through App Store, Google Play, and RuStore.",
+        "role": "Lead Developer and Project Architect",
+        "tech": "Flutter • Dart • In-App Purchases • REST API"
+      },
+      {
+        "name": "WowChef",
+        "subtitle": "Cooking app (archived project)",
+        "description": "Cooking app with recipes and video tutorials. Features include favorites, category search, step-by-step instructions with timers, in-app subscription purchases. Developed fullstack: Flutter app, Kotlin/Ktor backend, React admin panel.",
+        "status": "Status: Project no longer maintained",
+        "tech": "Flutter • Kotlin/Ktor • React • Kubernetes"
+      }
+    ]
+  },
+  "speaking": {
+    "title": "Speaking",
+    "conferences": [
+      {
+        "name": "CrossConf 2022",
+        "title": "\"Secure Flutter Development\"",
+        "description": "Talk on secure development practices in Flutter"
+      },
+      {
+        "name": "MergeConf 2022",
+        "title": "\"Evolutionary Architecture\"",
+        "description": "How to design architecture that grows with your product"
+      },
+      {
+        "name": "Surf Meetup 2022",
+        "title": "Talk at mobile developers meetup"
+      },
+      {
+        "name": "Yandex Mobile Development School",
+        "title": "\"Security in Mobile Development\"",
+        "description": "Lecture on data protection and secure code practices"
+      },
+      {
+        "name": "Yandex Mobile Development School",
+        "title": "\"Mobile Application Architecture\"",
+        "description": "Design patterns and scalable architecture"
+      },
+      {
+        "name": "MTUCI",
+        "title": "Teaching Flutter Development",
+        "description": "Leading course on mobile application development"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "intro": "Open to interesting projects and collaboration opportunities.",
+    "hint": "If I'm slow to respond — I might be ",
+    "overtime": "overtime",
+    "cta": "Message on Telegram",
+    "otherWays": "Also find me here",
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Alexey Shvedchikov"
+  }
+}
