@@ -1,99 +1,164 @@
 ---
 // Portfolio Website - Main Page
-import '../styles/global.css';
+import "../styles/global.css";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		
+
 		<!-- DNS Prefetch & Preconnect for external resources -->
-		<link rel="dns-prefetch" href="https://open.spotify.com" />
-		<link rel="preconnect" href="https://open.spotify.com" crossorigin />
-		
+		<link rel="dns-prefetch" href="https://music.yandex.ru" />
+		<link rel="preconnect" href="https://music.yandex.ru" crossorigin />
+
 		<!-- Primary Meta Tags -->
-		<title>Alexey Shvedchikov - Lead Flutter Developer | Tech Lead & Educator</title>
-		<meta name="title" content="Alexey Shvedchikov - Lead Flutter Developer | Tech Lead & Educator" />
-		<meta name="description" content="Lead Flutter Developer at Yandex with 6 years of experience. Building scalable mobile apps for 1M+ users. Tech Lead, educator, and conference speaker." />
-		<meta name="keywords" content="Flutter, Dart, Mobile Development, Tech Lead, Yandex, iOS, Android, BLoC, Clean Architecture" />
+		<title>
+			Alexey Shvedchikov - Lead Flutter Developer | Tech Lead & Educator
+		</title>
+		<meta
+			name="title"
+			content="Alexey Shvedchikov - Lead Flutter Developer | Tech Lead & Educator"
+		/>
+		<meta
+			name="description"
+			content="Lead Flutter Developer at Yandex with 6 years of experience. Building scalable mobile apps for 1M+ users. Tech Lead, educator, and conference speaker."
+		/>
+		<meta
+			name="keywords"
+			content="Flutter, Dart, Mobile Development, Tech Lead, Yandex, iOS, Android, BLoC, Clean Architecture"
+		/>
 		<meta name="author" content="Alexey Shvedchikov" />
 		<meta name="robots" content="index, follow" />
 		<link rel="canonical" href="https://dev.stereobreeze.ru/" />
-		
+
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://dev.stereobreeze.ru/" />
-		<meta property="og:title" content="Alexey Shvedchikov - Lead Flutter Developer | Tech Lead & Educator" />
-		<meta property="og:description" content="Lead Flutter Developer at Yandex with 6 years of experience. Building scalable mobile apps for 1M+ users. Tech Lead, educator, and conference speaker." />
-		<meta property="og:image" content="https://dev.stereobreeze.ru/images/og-image.jpg" />
-		<meta property="og:image:alt" content="Alexey Shvedchikov - Flutter Developer Portfolio" />
+		<meta
+			property="og:title"
+			content="Alexey Shvedchikov - Lead Flutter Developer | Tech Lead & Educator"
+		/>
+		<meta
+			property="og:description"
+			content="Lead Flutter Developer at Yandex with 6 years of experience. Building scalable mobile apps for 1M+ users. Tech Lead, educator, and conference speaker."
+		/>
+		<meta
+			property="og:image"
+			content="https://dev.stereobreeze.ru/images/og-image.jpg"
+		/>
+		<meta
+			property="og:image:alt"
+			content="Alexey Shvedchikov - Flutter Developer Portfolio"
+		/>
 		<meta property="og:site_name" content="Alexey Shvedchikov Portfolio" />
 		<meta property="og:locale" content="ru_RU" />
 		<meta property="og:locale:alternate" content="en_US" />
-		
+
 		<!-- Twitter -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:url" content="https://dev.stereobreeze.ru/" />
-		<meta name="twitter:title" content="Alexey Shvedchikov - Lead Flutter Developer" />
-		<meta name="twitter:description" content="Lead Flutter Developer at Yandex. Building scalable mobile apps for 1M+ users." />
-		<meta name="twitter:image" content="https://dev.stereobreeze.ru/images/og-image.jpg" />
+		<meta
+			name="twitter:title"
+			content="Alexey Shvedchikov - Lead Flutter Developer"
+		/>
+		<meta
+			name="twitter:description"
+			content="Lead Flutter Developer at Yandex. Building scalable mobile apps for 1M+ users."
+		/>
+		<meta
+			name="twitter:image"
+			content="https://dev.stereobreeze.ru/images/og-image.jpg"
+		/>
 		<meta name="twitter:creator" content="@a1exs_dev" />
-		
+
 		<!-- Favicons -->
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/favicon-16x16.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/apple-touch-icon.png"
+		/>
 		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="theme-color" content="#00ffff" />
-		
+
 		<!-- JSON-LD Structured Data -->
 		<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@type": "Person",
-			"name": "Alexey Shvedchikov",
-			"alternateName": "a1exs",
-			"url": "https://dev.stereobreeze.ru",
-			"image": "https://dev.stereobreeze.ru/images/profile.jpg",
-			"jobTitle": "Lead Flutter Developer",
-			"worksFor": {
-				"@type": "Organization",
-				"name": "Yandex"
-			},
-			"alumniOf": {
-				"@type": "EducationalOrganization",
-				"name": "Moscow Technical University of Communications and Informatics"
-			},
-			"knowsAbout": ["Flutter", "Dart", "Mobile Development", "iOS", "Android", "Kotlin", "Software Architecture", "Team Leadership"],
-			"sameAs": [
-				"https://github.com/alexsvdk",
-				"https://www.linkedin.com/in/a1exs/",
-				"https://t.me/a1exs_dev"
-			],
-			"address": {
-				"@type": "PostalAddress",
-				"addressCountry": "RU"
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Alexey Shvedchikov",
+				"alternateName": "a1exs",
+				"url": "https://dev.stereobreeze.ru",
+				"image": "https://dev.stereobreeze.ru/images/profile.jpg",
+				"jobTitle": "Lead Flutter Developer",
+				"worksFor": {
+					"@type": "Organization",
+					"name": "Yandex"
+				},
+				"alumniOf": {
+					"@type": "EducationalOrganization",
+					"name": "Moscow Technical University of Communications and Informatics"
+				},
+				"knowsAbout": [
+					"Flutter",
+					"Dart",
+					"Mobile Development",
+					"iOS",
+					"Android",
+					"Kotlin",
+					"Software Architecture",
+					"Team Leadership"
+				],
+				"sameAs": [
+					"https://github.com/alexsvdk",
+					"https://www.linkedin.com/in/a1exs/",
+					"https://t.me/a1exs_dev"
+				],
+				"address": {
+					"@type": "PostalAddress",
+					"addressCountry": "RU"
+				}
 			}
-		}
 		</script>
 	</head>
 	<body>
 		<!-- Navigation -->
 		<nav id="navigation">
-			<button class="hamburger" aria-label="Открыть меню" aria-expanded="false">
+			<button
+				class="hamburger"
+				aria-label="Открыть меню"
+				aria-expanded="false"
+			>
 				<span></span>
 				<span></span>
 				<span></span>
 			</button>
 			<ul class="nav-menu">
 				<li><a href="#about" data-i18n="nav.about">О себе</a></li>
-				<li><a href="#experience" data-i18n="nav.experience">Опыт</a></li>
+				<li>
+					<a href="#experience" data-i18n="nav.experience">Опыт</a>
+				</li>
 				<li><a href="#skills" data-i18n="nav.skills">Навыки</a></li>
-				<li><a href="#portfolio" data-i18n="nav.portfolio">Проекты</a></li>
-				<li><a href="#speaking" data-i18n="nav.speaking">Выступления</a></li>
+				<li>
+					<a href="#portfolio" data-i18n="nav.portfolio">Проекты</a>
+				</li>
+				<li>
+					<a href="#speaking" data-i18n="nav.speaking">Выступления</a>
+				</li>
 				<li><a href="#contact" data-i18n="nav.contact">Контакты</a></li>
 			</ul>
 		</nav>
@@ -101,178 +166,359 @@ import '../styles/global.css';
 		<!-- Hero Section -->
 		<section id="hero">
 			<div class="hero-video-container">
-				<video class="hero-video" autoplay muted loop playsinline poster="/images/hero-poster.png">
-					<source src="/video/hero-background.mp4" type="video/mp4">
+				<video
+					class="hero-video"
+					autoplay
+					muted
+					loop
+					playsinline
+					poster="/images/hero-poster.png"
+				>
+					<source src="/video/hero-background.mp4" type="video/mp4" />
 				</video>
 				<div class="hero-overlay"></div>
 			</div>
 			<div class="hero-content">
-				<h1 class="glitch-text" data-text="Алексей Шведчиков" data-i18n="hero.name">Алексей Шведчиков</h1>
-				<p data-i18n="hero.tagline">Руководитель разработки, Fullstack-разработчик, Архитектор решений</p>
-				<a href="#contact" class="cta-button" data-i18n="hero.cta">Связаться со мной</a>
+				<h1
+					class="glitch-text"
+					data-text="Алексей Шведчиков"
+					data-i18n="hero.name"
+				>
+					Алексей Шведчиков
+				</h1>
+				<p data-i18n="hero.tagline">
+					Руководитель разработки, Fullstack-разработчик, Архитектор
+					решений
+				</p>
+				<a href="#contact" class="cta-button" data-i18n="hero.cta"
+					>Связаться со мной</a
+				>
 			</div>
-		</section>		<!-- About Section -->
+		</section>
+		<!-- About Section -->
 		<section id="about">
 			<h2 data-i18n="about.title">О себе</h2>
-			<p data-i18n="about.paragraph1">Ведущий Flutter-разработчик с 6 годами опыта. Работаю над проектами от стартап-MVP до enterprise-систем с миллионами пользователей. В Яндексе руковожу командой и проектирую архитектуру для 100+ разработчиков.</p>
-			<p data-i18n="about.paragraph2">Меня мотивирует создавать качественные, надежные решения. Работаю на совесть — чтобы всё работало железобетонно. Люблю сложные технические вызовы, где нужно сделать возможным то, что кажется невозможным.</p>
-			<p data-i18n="about.paragraph3">Помимо кода пишу музыку и выступаю на конференциях. Это развивает креативное мышление и помогает находить нестандартные решения в разработке.</p>
+			<p data-i18n="about.paragraph1">
+				Ведущий Flutter-разработчик с 6 годами опыта. Работаю над
+				проектами от стартап-MVP до enterprise-систем с миллионами
+				пользователей. В Яндексе руковожу командой и проектирую
+				архитектуру для 100+ разработчиков.
+			</p>
+			<p data-i18n="about.paragraph2">
+				Меня мотивирует создавать качественные, надежные решения.
+				Работаю на совесть — чтобы всё работало железобетонно. Люблю
+				сложные технические вызовы, где нужно сделать возможным то, что
+				кажется невозможным.
+			</p>
+			<p data-i18n="about.paragraph3">
+				Помимо кода пишу музыку и выступаю на конференциях. Это
+				развивает креативное мышление и помогает находить нестандартные
+				решения в разработке.
+			</p>
 		</section>
 
 		<!-- Experience Section -->
 		<section id="experience">
 			<h2 data-i18n="experience.title">Опыт работы</h2>
-			
-			<article class="experience-item">
-				<div class="experience-header">
-					<img src="/images/logos/yandex-2.svg" alt="Яндекс" class="company-logo" loading="lazy" />
-					<div class="experience-title-group">
-						<h3 data-i18n="experience.jobs.0.company">Яндекс</h3>
-						<p class="position" data-i18n="experience.jobs.0.role">Ведущий Flutter-разработчик</p>
-						<p class="period" data-i18n="experience.jobs.0.period">Июль 2022 — Настоящее время (2 года)</p>
-					</div>
-				</div>
-				<p class="description" data-i18n="experience.jobs.0.description">Разрабатываю и поддерживаю Яндекс Про — суперап для профессионалов (курьеры, водители, самозанятые) с аудиторией 1+ млн активных пользователей. Руковожу командой из 3 разработчиков, проектирую архитектуру и внедряю технологические инновации.</p>
-				<ul>
-					<li data-i18n="experience.jobs.0.achievements.0">Разработал протокол переадресаций для динамического добавления новых ветвлений логики без обновления приложения</li>
-					<li data-i18n="experience.jobs.0.achievements.1">Внедрил AI-бота для классификации и маршрутизации багрепортов, сократил нагрузку на дежурных разработчиков</li>
-					<li data-i18n="experience.jobs.0.achievements.2">Вырастил 5 стажеров до уровня middle-разработчиков</li>
-					<li data-i18n="experience.jobs.0.achievements.3">Провел более 100 технических собеседований по Flutter и алгоритмам</li>
-					<li data-i18n="experience.jobs.0.achievements.4">Руководил крупным NDA-проектом, координировал внутренние команды и двух подрядчиков</li>
-				</ul>
-				<p class="tech" data-i18n="experience.jobs.0.tech">Flutter • Dart • BLoC • Clean Architecture • CI/CD</p>
-			</article>			<hr class="section-divider" />
 
 			<article class="experience-item">
 				<div class="experience-header">
-					<img src="/images/logos/samsung-8.svg" alt="Samsung" class="company-logo" loading="lazy" />
+					<img
+						src="/images/logos/yandex-2.svg"
+						alt="Яндекс"
+						class="company-logo"
+						loading="lazy"
+					/>
 					<div class="experience-title-group">
-						<h3 data-i18n="experience.jobs.1.company">IT Школа Samsung</h3>
-						<p class="position" data-i18n="experience.jobs.1.role">Преподаватель</p>
-						<p class="period" data-i18n="experience.jobs.1.period">Сентябрь 2019 — Май 2022</p>
+						<h3 data-i18n="experience.jobs.0.company">Яндекс</h3>
+						<p class="position" data-i18n="experience.jobs.0.role">
+							Ведущий Flutter-разработчик
+						</p>
+						<p class="period" data-i18n="experience.jobs.0.period">
+							Июль 2022 — Настоящее время (2 года)
+						</p>
 					</div>
 				</div>
-				<p class="description" data-i18n="experience.jobs.1.description">Преподавал Android-разработку и язык Java. Обучил 3 потока студентов основам мобильной разработки и объектно-ориентированному программированию.</p>
+				<p
+					class="description"
+					data-i18n="experience.jobs.0.description"
+				>
+					Разрабатываю и поддерживаю Яндекс Про — суперап для
+					профессионалов (курьеры, водители, самозанятые) с аудиторией
+					1+ млн активных пользователей. Руковожу командой из 3
+					разработчиков, проектирую архитектуру и внедряю
+					технологические инновации.
+				</p>
+				<ul>
+					<li data-i18n="experience.jobs.0.achievements.0">
+						Разработал протокол переадресаций для динамического
+						добавления новых ветвлений логики без обновления
+						приложения
+					</li>
+					<li data-i18n="experience.jobs.0.achievements.1">
+						Внедрил AI-бота для классификации и маршрутизации
+						багрепортов, сократил нагрузку на дежурных разработчиков
+					</li>
+					<li data-i18n="experience.jobs.0.achievements.2">
+						Вырастил 5 стажеров до уровня middle-разработчиков
+					</li>
+					<li data-i18n="experience.jobs.0.achievements.3">
+						Провел более 100 технических собеседований по Flutter и
+						алгоритмам
+					</li>
+					<li data-i18n="experience.jobs.0.achievements.4">
+						Руководил крупным NDA-проектом, координировал внутренние
+						команды и двух подрядчиков
+					</li>
+				</ul>
+				<p class="tech" data-i18n="experience.jobs.0.tech">
+					Flutter • Dart • BLoC • Clean Architecture • CI/CD
+				</p>
+			</article>
+			<hr class="section-divider" />
+
+			<article class="experience-item">
+				<div class="experience-header">
+					<img
+						src="/images/logos/samsung-8.svg"
+						alt="Samsung"
+						class="company-logo"
+						loading="lazy"
+					/>
+					<div class="experience-title-group">
+						<h3 data-i18n="experience.jobs.1.company">
+							IT Школа Samsung
+						</h3>
+						<p class="position" data-i18n="experience.jobs.1.role">
+							Преподаватель
+						</p>
+						<p class="period" data-i18n="experience.jobs.1.period">
+							Сентябрь 2019 — Май 2022
+						</p>
+					</div>
+				</div>
+				<p
+					class="description"
+					data-i18n="experience.jobs.1.description"
+				>
+					Преподавал Android-разработку и язык Java. Обучил 3 потока
+					студентов основам мобильной разработки и
+					объектно-ориентированному программированию.
+				</p>
 			</article>
 		</section>
 
 		<!-- Skills Section -->
 		<section id="skills">
 			<h2 data-i18n="skills.title">Навыки</h2>
-			
+
 			<div class="skills-grid">
 				<div class="skill-item" data-skill-level="5">
 					<div class="skill-star-container">
-						<svg class="skill-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+						<svg
+							class="skill-star"
+							viewBox="0 0 100 100"
+							xmlns="http://www.w3.org/2000/svg"
+						>
 							<defs>
 								<filter id="glow-mobile">
-									<feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+									<feGaussianBlur
+										stdDeviation="2"
+										result="coloredBlur"></feGaussianBlur>
 									<feMerge>
-										<feMergeNode in="coloredBlur"/>
-										<feMergeNode in="SourceGraphic"/>
+										<feMergeNode in="coloredBlur"
+										></feMergeNode>
+										<feMergeNode in="SourceGraphic"
+										></feMergeNode>
 									</feMerge>
 								</filter>
 							</defs>
 							<!-- 5-point star -->
-							<polygon class="star-bg" points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40" />
-							<polygon class="star-fill" points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40" data-points="5" />
+							<polygon
+								class="star-bg"
+								points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40"
+							></polygon>
+							<polygon
+								class="star-fill"
+								points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40"
+								data-points="5"></polygon>
 						</svg>
 						<div class="skill-level-text">★★★★★</div>
 					</div>
-					<h3 data-i18n="skills.categories.0.name">Мобильная разработка</h3>
+					<h3 data-i18n="skills.categories.0.name">
+						Мобильная разработка
+					</h3>
 					<div class="skill-tooltip">
 						<ul>
-							<li data-i18n="skills.categories.0.items.0">Dart / Flutter (6 лет)</li>
-							<li data-i18n="skills.categories.0.items.1">Kotlin / Android SDK (7 лет)</li>
-							<li data-i18n="skills.categories.0.items.2">State Management (Provider, Riverpod, BLoC)</li>
-							<li data-i18n="skills.categories.0.items.3">Clean Architecture, MVVM</li>
+							<li data-i18n="skills.categories.0.items.0">
+								Dart / Flutter (6 лет)
+							</li>
+							<li data-i18n="skills.categories.0.items.1">
+								Kotlin / Android SDK (7 лет)
+							</li>
+							<li data-i18n="skills.categories.0.items.2">
+								State Management (Provider, Riverpod, BLoC)
+							</li>
+							<li data-i18n="skills.categories.0.items.3">
+								Clean Architecture, MVVM
+							</li>
 						</ul>
 					</div>
 				</div>
 
 				<div class="skill-item" data-skill-level="4">
 					<div class="skill-star-container">
-						<svg class="skill-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+						<svg
+							class="skill-star"
+							viewBox="0 0 100 100"
+							xmlns="http://www.w3.org/2000/svg"
+						>
 							<defs>
 								<filter id="glow-backend">
-									<feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+									<feGaussianBlur
+										stdDeviation="2"
+										result="coloredBlur"></feGaussianBlur>
 									<feMerge>
-										<feMergeNode in="coloredBlur"/>
-										<feMergeNode in="SourceGraphic"/>
+										<feMergeNode in="coloredBlur"
+										></feMergeNode>
+										<feMergeNode in="SourceGraphic"
+										></feMergeNode>
 									</feMerge>
 								</filter>
 							</defs>
 							<!-- 5-point star -->
-							<polygon class="star-bg" points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40" />
-							<polygon class="star-fill" points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40" data-points="4" />
+							<polygon
+								class="star-bg"
+								points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40"
+							></polygon>
+							<polygon
+								class="star-fill"
+								points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40"
+								data-points="4"></polygon>
 						</svg>
 						<div class="skill-level-text">★★★★☆</div>
 					</div>
 					<h3 data-i18n="skills.categories.1.name">Backend & API</h3>
 					<div class="skill-tooltip">
 						<ul>
-							<li data-i18n="skills.categories.1.items.0">Kotlin / Ktor</li>
-							<li data-i18n="skills.categories.1.items.1">REST API, GraphQL</li>
-							<li data-i18n="skills.categories.1.items.2">Проектирование клиент-серверного взаимодействия</li>
+							<li data-i18n="skills.categories.1.items.0">
+								Kotlin / Ktor
+							</li>
+							<li data-i18n="skills.categories.1.items.1">
+								REST API, GraphQL
+							</li>
+							<li data-i18n="skills.categories.1.items.2">
+								Проектирование клиент-серверного взаимодействия
+							</li>
 						</ul>
 					</div>
 				</div>
 
 				<div class="skill-item" data-skill-level="4">
 					<div class="skill-star-container">
-						<svg class="skill-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+						<svg
+							class="skill-star"
+							viewBox="0 0 100 100"
+							xmlns="http://www.w3.org/2000/svg"
+						>
 							<defs>
 								<filter id="glow-devops">
-									<feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+									<feGaussianBlur
+										stdDeviation="2"
+										result="coloredBlur"></feGaussianBlur>
 									<feMerge>
-										<feMergeNode in="coloredBlur"/>
-										<feMergeNode in="SourceGraphic"/>
+										<feMergeNode in="coloredBlur"
+										></feMergeNode>
+										<feMergeNode in="SourceGraphic"
+										></feMergeNode>
 									</feMerge>
 								</filter>
 							</defs>
 							<!-- 5-point star -->
-							<polygon class="star-bg" points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40" />
-							<polygon class="star-fill" points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40" data-points="4" />
+							<polygon
+								class="star-bg"
+								points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40"
+							></polygon>
+							<polygon
+								class="star-fill"
+								points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40"
+								data-points="4"></polygon>
 						</svg>
 						<div class="skill-level-text">★★★★☆</div>
 					</div>
-					<h3 data-i18n="skills.categories.2.name">DevOps & Инфраструктура</h3>
+					<h3 data-i18n="skills.categories.2.name">
+						DevOps & Инфраструктура
+					</h3>
 					<div class="skill-tooltip">
 						<ul>
-							<li data-i18n="skills.categories.2.items.0">Docker / Kubernetes</li>
-							<li data-i18n="skills.categories.2.items.1">CI/CD (GitHub Actions, GitLab CI)</li>
-							<li data-i18n="skills.categories.2.items.2">Fastlane</li>
-							<li data-i18n="skills.categories.2.items.3">Автоматизация процессов</li>
+							<li data-i18n="skills.categories.2.items.0">
+								Docker / Kubernetes
+							</li>
+							<li data-i18n="skills.categories.2.items.1">
+								CI/CD (GitHub Actions, GitLab CI)
+							</li>
+							<li data-i18n="skills.categories.2.items.2">
+								Fastlane
+							</li>
+							<li data-i18n="skills.categories.2.items.3">
+								Автоматизация процессов
+							</li>
 						</ul>
 					</div>
 				</div>
 
 				<div class="skill-item" data-skill-level="5">
 					<div class="skill-star-container">
-						<svg class="skill-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+						<svg
+							class="skill-star"
+							viewBox="0 0 100 100"
+							xmlns="http://www.w3.org/2000/svg"
+						>
 							<defs>
 								<filter id="glow-soft">
-									<feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+									<feGaussianBlur
+										stdDeviation="2"
+										result="coloredBlur"></feGaussianBlur>
 									<feMerge>
-										<feMergeNode in="coloredBlur"/>
-										<feMergeNode in="SourceGraphic"/>
+										<feMergeNode in="coloredBlur"
+										></feMergeNode>
+										<feMergeNode in="SourceGraphic"
+										></feMergeNode>
 									</feMerge>
 								</filter>
 							</defs>
 							<!-- 5-point star -->
-							<polygon class="star-bg" points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40" />
-							<polygon class="star-fill" points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40" data-points="5" />
+							<polygon
+								class="star-bg"
+								points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40"
+							></polygon>
+							<polygon
+								class="star-fill"
+								points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40"
+								data-points="5"></polygon>
 						</svg>
 						<div class="skill-level-text">★★★★★</div>
 					</div>
-					<h3 data-i18n="skills.categories.3.name">Лидерство и процессы</h3>
+					<h3 data-i18n="skills.categories.3.name">
+						Лидерство и процессы
+					</h3>
 					<div class="skill-tooltip">
 						<ul>
-							<li data-i18n="skills.categories.3.items.0">Руководство командами (3 человека)</li>
-							<li data-i18n="skills.categories.3.items.1">Менторство и развитие разработчиков</li>
-							<li data-i18n="skills.categories.3.items.2">Код-ревью и архитектурные ревью</li>
-							<li data-i18n="skills.categories.3.items.3">Найм и проведение собеседований</li>
-							<li data-i18n="skills.categories.3.items.4">Agile / Scrum</li>
+							<li data-i18n="skills.categories.3.items.0">
+								Руководство командами (3 человека)
+							</li>
+							<li data-i18n="skills.categories.3.items.1">
+								Менторство и развитие разработчиков
+							</li>
+							<li data-i18n="skills.categories.3.items.2">
+								Код-ревью и архитектурные ревью
+							</li>
+							<li data-i18n="skills.categories.3.items.3">
+								Найм и проведение собеседований
+							</li>
+							<li data-i18n="skills.categories.3.items.4">
+								Agile / Scrum
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -285,86 +531,153 @@ import '../styles/global.css';
 
 			<article class="project">
 				<div class="project-header">
-					<img 
-						src="/images/logos/yandex-pro.jpg" 
-						alt="Яндекс Про logo" 
+					<img
+						src="/images/logos/yandex-pro.jpg"
+						alt="Яндекс Про logo"
 						class="project-logo"
 						loading="lazy"
 					/>
 					<div class="project-title-group">
-						<h3 data-i18n="portfolio.projects.0.name">Яндекс Про</h3>
-						<p class="project-subtitle" data-i18n="portfolio.projects.0.subtitle">Суперап для профессионалов</p>
+						<h3 data-i18n="portfolio.projects.0.name">
+							Яндекс Про
+						</h3>
+						<p
+							class="project-subtitle"
+							data-i18n="portfolio.projects.0.subtitle"
+						>
+							Суперап для профессионалов
+						</p>
 					</div>
 				</div>
-				<p class="project-description" data-i18n="portfolio.projects.0.description">Суперап, объединяющий сервисы Яндекса для водителей, курьеров и самозанятых. Более 1 миллиона активных пользователей.</p>
-				<p class="project-role" data-i18n="portfolio.projects.0.role">Роль: Ведущий Flutter-разработчик, технический лидер</p>
-				<p class="project-tech" data-i18n="portfolio.projects.0.tech">Flutter • Dart • BLoC • Clean Architecture</p>
+				<p
+					class="project-description"
+					data-i18n="portfolio.projects.0.description"
+				>
+					Суперап, объединяющий сервисы Яндекса для водителей,
+					курьеров и самозанятых. Более 1 миллиона активных
+					пользователей.
+				</p>
+				<p class="project-role" data-i18n="portfolio.projects.0.role">
+					Роль: Ведущий Flutter-разработчик, технический лидер
+				</p>
+				<p class="project-tech" data-i18n="portfolio.projects.0.tech">
+					Flutter • Dart • BLoC • Clean Architecture
+				</p>
 				<ul class="project-achievements">
-					<li data-i18n="portfolio.projects.0.achievements.0">Спроектировал масштабируемую архитектуру для команды из 100+ разработчиков</li>
-					<li data-i18n="portfolio.projects.0.achievements.1">Разработал систему динамической маршрутизации для гибкого управления навигацией</li>
-					<li data-i18n="portfolio.projects.0.achievements.2">Внедрил AI-инструменты для оптимизации работы команды</li>
+					<li data-i18n="portfolio.projects.0.achievements.0">
+						Спроектировал масштабируемую архитектуру для команды из
+						100+ разработчиков
+					</li>
+					<li data-i18n="portfolio.projects.0.achievements.1">
+						Разработал систему динамической маршрутизации для
+						гибкого управления навигацией
+					</li>
+					<li data-i18n="portfolio.projects.0.achievements.2">
+						Внедрил AI-инструменты для оптимизации работы команды
+					</li>
 				</ul>
-				<a href="https://apps.apple.com/ru/app/id1450425813" target="_blank" rel="noopener" data-i18n="portfolio.projects.0.link">Посмотреть в App Store →</a>
+				<a
+					href="https://apps.apple.com/ru/app/id1450425813"
+					target="_blank"
+					rel="noopener"
+					data-i18n="portfolio.projects.0.link"
+					>Посмотреть в App Store →</a
+				>
 			</article>
 
 			<hr class="section-divider" />
 
 			<article class="project">
 				<div class="project-header">
-					<img 
-						src="/images/logos/era-of-change.png" 
-						alt="Эра перемен logo" 
+					<img
+						src="/images/logos/era-of-change.png"
+						alt="Эра перемен logo"
 						class="project-logo"
 						loading="lazy"
 					/>
 					<div class="project-title-group">
-						<h3 data-i18n="portfolio.projects.1.name">Эра перемен</h3>
-						<p class="project-subtitle" data-i18n="portfolio.projects.1.subtitle">Крипто-новости и аналитика</p>
+						<h3 data-i18n="portfolio.projects.1.name">
+							Эра перемен
+						</h3>
+						<p
+							class="project-subtitle"
+							data-i18n="portfolio.projects.1.subtitle"
+						>
+							Крипто-новости и аналитика
+						</p>
 					</div>
 				</div>
 				<div class="project-screenshots-grid">
 					<div class="project-screenshot-container">
-						<img 
-							src="/images/portfolio/0.png" 
-							alt="Эра перемен - главный экран" 
+						<img
+							src="/images/portfolio/0.png"
+							alt="Эра перемен - главный экран"
 							class="project-screenshot"
 							loading="lazy"
 						/>
 					</div>
 					<div class="project-screenshot-container">
-						<img 
-							src="/images/portfolio/1.png" 
-							alt="Эра перемен - новости" 
+						<img
+							src="/images/portfolio/1.png"
+							alt="Эра перемен - новости"
 							class="project-screenshot"
 							loading="lazy"
 						/>
 					</div>
 					<div class="project-screenshot-container">
-						<img 
-							src="/images/portfolio/2.png" 
-							alt="Эра перемен - аналитика" 
+						<img
+							src="/images/portfolio/2.png"
+							alt="Эра перемен - аналитика"
 							class="project-screenshot"
 							loading="lazy"
 						/>
 					</div>
 					<div class="project-screenshot-container">
-						<img 
-							src="/images/portfolio/3.png" 
-							alt="Эра перемен - подписки" 
+						<img
+							src="/images/portfolio/3.png"
+							alt="Эра перемен - подписки"
 							class="project-screenshot"
 							loading="lazy"
 						/>
 					</div>
 				</div>
-				<p class="project-description" data-i18n="portfolio.projects.1.description">Приложение с новостями и аналитикой криптовалют и блокчейн-технологий. 4 уровня подписки с оплатой через App Store, Google Play и RuStore.</p>
-				<p class="project-role" data-i18n="portfolio.projects.1.role">Роль: Ведущий разработчик и архитектор</p>
-				<p class="project-tech" data-i18n="portfolio.projects.1.tech">Flutter • Dart • In-App Purchases • REST API</p>
+				<p
+					class="project-description"
+					data-i18n="portfolio.projects.1.description"
+				>
+					Приложение с новостями и аналитикой криптовалют и
+					блокчейн-технологий. 4 уровня подписки с оплатой через App
+					Store, Google Play и RuStore.
+				</p>
+				<p class="project-role" data-i18n="portfolio.projects.1.role">
+					Роль: Ведущий разработчик и архитектор
+				</p>
+				<p class="project-tech" data-i18n="portfolio.projects.1.tech">
+					Flutter • Dart • In-App Purchases • REST API
+				</p>
 				<div class="project-links">
-					<a href="https://eraperemen.info/" target="_blank" rel="noopener" data-i18n="portfolio.projects.1.links.website">Сайт</a>
+					<a
+						href="https://eraperemen.info/"
+						target="_blank"
+						rel="noopener"
+						data-i18n="portfolio.projects.1.links.website">Сайт</a
+					>
 					<span class="link-separator">•</span>
-					<a href="https://apps.apple.com/id6747209288" target="_blank" rel="noopener" data-i18n="portfolio.projects.1.links.appStore">App Store</a>
+					<a
+						href="https://apps.apple.com/id6747209288"
+						target="_blank"
+						rel="noopener"
+						data-i18n="portfolio.projects.1.links.appStore"
+						>App Store</a
+					>
 					<span class="link-separator">•</span>
-					<a href="https://play.google.com/store/apps/details?id=info.eraperemen.eraperemen" target="_blank" rel="noopener" data-i18n="portfolio.projects.1.links.googlePlay">Google Play</a>
+					<a
+						href="https://play.google.com/store/apps/details?id=info.eraperemen.eraperemen"
+						target="_blank"
+						rel="noopener"
+						data-i18n="portfolio.projects.1.links.googlePlay"
+						>Google Play</a
+					>
 				</div>
 			</article>
 
@@ -372,92 +685,263 @@ import '../styles/global.css';
 
 			<article class="project">
 				<div class="project-header">
-					<img 
-						src="/images/logos/wowchef.png" 
-						alt="WowChef logo" 
+					<img
+						src="/images/logos/wowchef.png"
+						alt="WowChef logo"
 						class="project-logo"
 						loading="lazy"
 					/>
 					<div class="project-title-group">
 						<h3 data-i18n="portfolio.projects.2.name">WowChef</h3>
-						<p class="project-subtitle" data-i18n="portfolio.projects.2.subtitle">Кулинарное приложение (архивный проект)</p>
+						<p
+							class="project-subtitle"
+							data-i18n="portfolio.projects.2.subtitle"
+						>
+							Кулинарное приложение (архивный проект)
+						</p>
 					</div>
 				</div>
-				<p class="project-description" data-i18n="portfolio.projects.2.description">Кулинарное приложение с рецептами и видеоинструкциями. Реализованы функции избранного, поиска по категориям, пошаговые инструкции с таймерами, покупка подписки через магазины. Разработал fullstack: Flutter-приложение, backend на Kotlin/Ktor, админ-панель на React.</p>
-				<p class="project-status" data-i18n="portfolio.projects.2.status">Статус: Проект перестал поддерживаться</p>
-				<p class="project-tech" data-i18n="portfolio.projects.2.tech">Flutter • Kotlin/Ktor • React • Kubernetes</p>
-				<a href="https://wowchef.kitchen/" target="_blank" rel="noopener" data-i18n="portfolio.projects.2.link">Сайт</a>
+				<p
+					class="project-description"
+					data-i18n="portfolio.projects.2.description"
+				>
+					Кулинарное приложение с рецептами и видеоинструкциями.
+					Реализованы функции избранного, поиска по категориям,
+					пошаговые инструкции с таймерами, покупка подписки через
+					магазины. Разработал fullstack: Flutter-приложение, backend
+					на Kotlin/Ktor, админ-панель на React.
+				</p>
+				<p
+					class="project-status"
+					data-i18n="portfolio.projects.2.status"
+				>
+					Статус: Проект перестал поддерживаться
+				</p>
+				<p class="project-tech" data-i18n="portfolio.projects.2.tech">
+					Flutter • Kotlin/Ktor • React • Kubernetes
+				</p>
+				<a
+					href="https://wowchef.kitchen/"
+					target="_blank"
+					rel="noopener"
+					data-i18n="portfolio.projects.2.link">Сайт</a
+				>
 			</article>
 		</section>
 
 		<!-- Speaking Section -->
 		<section id="speaking">
 			<h2 data-i18n="speaking.title">Выступления</h2>
-			
+
 			<div class="speaking-grid">
-				<a href="https://www.youtube.com/watch?v=I2WOcO15fdI" target="_blank" rel="noopener" class="talk-card">
+				<a
+					href="https://www.youtube.com/watch?v=I2WOcO15fdI"
+					target="_blank"
+					rel="noopener"
+					class="talk-card"
+				>
 					<div class="talk-image-container">
-						<img src="/images/speaking/cross conf 2022.png" alt="CrossConf 2022" class="talk-image" loading="lazy" />
-						<img src="/images/speaking/cross-conf-logo.svg" alt="CrossConf logo" class="talk-logo" loading="lazy" />
+						<img
+							src="/images/speaking/cross conf 2022.png"
+							alt="CrossConf 2022"
+							class="talk-image"
+							loading="lazy"
+						/>
+						<img
+							src="/images/speaking/cross-conf-logo.svg"
+							alt="CrossConf logo"
+							class="talk-logo"
+							loading="lazy"
+						/>
 					</div>
 					<div class="talk-content">
-						<h3 data-i18n="speaking.talks.0.conference">CrossConf 2022</h3>
-						<p class="talk-title" data-i18n="speaking.talks.0.title">"За безопасный Flutter"</p>
-						<p class="talk-description" data-i18n="speaking.talks.0.description">Доклад о практиках безопасной разработки на Flutter</p>
-						<span class="talk-link-text" data-i18n="speaking.talks.0.link">Смотреть на YouTube →</span>
+						<h3 data-i18n="speaking.talks.0.conference">
+							CrossConf 2022
+						</h3>
+						<p
+							class="talk-title"
+							data-i18n="speaking.talks.0.title"
+						>
+							"За безопасный Flutter"
+						</p>
+						<p
+							class="talk-description"
+							data-i18n="speaking.talks.0.description"
+						>
+							Доклад о практиках безопасной разработки на Flutter
+						</p>
+						<span
+							class="talk-link-text"
+							data-i18n="speaking.talks.0.link"
+							>Смотреть на YouTube →</span
+						>
 					</div>
 				</a>
 
-				<a href="https://www.youtube.com/watch?v=ThtVERWO8rw" target="_blank" rel="noopener" class="talk-card">
+				<a
+					href="https://www.youtube.com/watch?v=ThtVERWO8rw"
+					target="_blank"
+					rel="noopener"
+					class="talk-card"
+				>
 					<div class="talk-image-container">
-						<img src="/images/speaking/merge conf 2022.png" alt="MergeConf 2022" class="talk-image" loading="lazy" />
-						<img src="/images/speaking/merge-conf-logo.svg" alt="MergeConf logo" class="talk-logo" loading="lazy" />
+						<img
+							src="/images/speaking/merge conf 2022.png"
+							alt="MergeConf 2022"
+							class="talk-image"
+							loading="lazy"
+						/>
+						<img
+							src="/images/speaking/merge-conf-logo.svg"
+							alt="MergeConf logo"
+							class="talk-logo"
+							loading="lazy"
+						/>
 					</div>
 					<div class="talk-content">
-						<h3 data-i18n="speaking.talks.1.conference">MergeConf 2022</h3>
-						<p class="talk-title" data-i18n="speaking.talks.1.title">"Эволюционная архитектура"</p>
-						<p class="talk-description" data-i18n="speaking.talks.1.description">Как проектировать архитектуру, которая растет вместе с продуктом</p>
-						<span class="talk-link-text" data-i18n="speaking.talks.1.link">Смотреть на YouTube →</span>
+						<h3 data-i18n="speaking.talks.1.conference">
+							MergeConf 2022
+						</h3>
+						<p
+							class="talk-title"
+							data-i18n="speaking.talks.1.title"
+						>
+							"Эволюционная архитектура"
+						</p>
+						<p
+							class="talk-description"
+							data-i18n="speaking.talks.1.description"
+						>
+							Как проектировать архитектуру, которая растет вместе
+							с продуктом
+						</p>
+						<span
+							class="talk-link-text"
+							data-i18n="speaking.talks.1.link"
+							>Смотреть на YouTube →</span
+						>
 					</div>
 				</a>
 
-				<a href="https://surf-studio.timepad.ru/event/2106561/" target="_blank" rel="noopener" class="talk-card">
+				<a
+					href="https://surf-studio.timepad.ru/event/2106561/"
+					target="_blank"
+					rel="noopener"
+					class="talk-card"
+				>
 					<div class="talk-image-container">
 						<div class="talk-image-placeholder">
 							<span>🎤</span>
 						</div>
 					</div>
 					<div class="talk-content">
-						<h3 data-i18n="speaking.talks.2.conference">Митап Surf 2022</h3>
-						<p class="talk-title" data-i18n="speaking.talks.2.title">Выступление на митапе мобильных разработчиков</p>
-						<p class="talk-description" data-i18n="speaking.talks.2.description">Обсуждение лучших практик разработки</p>
-						<span class="talk-link-text" data-i18n="speaking.talks.2.link">Подробнее →</span>
+						<h3 data-i18n="speaking.talks.2.conference">
+							Митап Surf 2022
+						</h3>
+						<p
+							class="talk-title"
+							data-i18n="speaking.talks.2.title"
+						>
+							Выступление на митапе мобильных разработчиков
+						</p>
+						<p
+							class="talk-description"
+							data-i18n="speaking.talks.2.description"
+						>
+							Обсуждение лучших практик разработки
+						</p>
+						<span
+							class="talk-link-text"
+							data-i18n="speaking.talks.2.link">Подробнее →</span
+						>
 					</div>
 				</a>
 
-				<a href="https://www.youtube.com/live/oBJ2SLfijYI" target="_blank" rel="noopener" class="talk-card">
+				<a
+					href="https://www.youtube.com/live/oBJ2SLfijYI"
+					target="_blank"
+					rel="noopener"
+					class="talk-card"
+				>
 					<div class="talk-image-container">
-						<img src="/images/speaking/Лекция по безопасности.png" alt="Лекция по безопасности" class="talk-image" loading="lazy" />
-						<img src="/images/logos/yandex-2.svg" alt="Яндекс" class="talk-logo" loading="lazy" />
+						<img
+							src="/images/speaking/Лекция по безопасности.png"
+							alt="Лекция по безопасности"
+							class="talk-image"
+							loading="lazy"
+						/>
+						<img
+							src="/images/logos/yandex-2.svg"
+							alt="Яндекс"
+							class="talk-logo"
+							loading="lazy"
+						/>
 					</div>
 					<div class="talk-content">
-						<h3 data-i18n="speaking.talks.3.conference">Школа мобильной разработки Яндекса</h3>
-						<p class="talk-title" data-i18n="speaking.talks.3.title">"Безопасность в мобильной разработке"</p>
-						<p class="talk-description" data-i18n="speaking.talks.3.description">Лекция о практиках защиты данных и безопасного кода</p>
-						<span class="talk-link-text" data-i18n="speaking.talks.3.link">Смотреть на YouTube →</span>
+						<h3 data-i18n="speaking.talks.3.conference">
+							Школа мобильной разработки Яндекса
+						</h3>
+						<p
+							class="talk-title"
+							data-i18n="speaking.talks.3.title"
+						>
+							"Безопасность в мобильной разработке"
+						</p>
+						<p
+							class="talk-description"
+							data-i18n="speaking.talks.3.description"
+						>
+							Лекция о практиках защиты данных и безопасного кода
+						</p>
+						<span
+							class="talk-link-text"
+							data-i18n="speaking.talks.3.link"
+							>Смотреть на YouTube →</span
+						>
 					</div>
 				</a>
 
-				<a href="https://www.youtube.com/watch?v=OWcK32Ir6J4" target="_blank" rel="noopener" class="talk-card">
+				<a
+					href="https://www.youtube.com/watch?v=OWcK32Ir6J4"
+					target="_blank"
+					rel="noopener"
+					class="talk-card"
+				>
 					<div class="talk-image-container">
-						<img src="/images/speaking/Лекция по архитектуре.png" alt="Лекция по архитектуре" class="talk-image" loading="lazy" />
-						<img src="/images/logos/yandex-2.svg" alt="Яндекс" class="talk-logo" loading="lazy" />
+						<img
+							src="/images/speaking/Лекция по архитектуре.png"
+							alt="Лекция по архитектуре"
+							class="talk-image"
+							loading="lazy"
+						/>
+						<img
+							src="/images/logos/yandex-2.svg"
+							alt="Яндекс"
+							class="talk-logo"
+							loading="lazy"
+						/>
 					</div>
 					<div class="talk-content">
-						<h3 data-i18n="speaking.talks.4.conference">Школа мобильной разработки Яндекса</h3>
-						<p class="talk-title" data-i18n="speaking.talks.4.title">"Архитектура мобильных приложений"</p>
-						<p class="talk-description" data-i18n="speaking.talks.4.description">Паттерны проектирования и масштабируемая архитектура</p>
-						<span class="talk-link-text" data-i18n="speaking.talks.4.link">Смотреть на YouTube →</span>
+						<h3 data-i18n="speaking.talks.4.conference">
+							Школа мобильной разработки Яндекса
+						</h3>
+						<p
+							class="talk-title"
+							data-i18n="speaking.talks.4.title"
+						>
+							"Архитектура мобильных приложений"
+						</p>
+						<p
+							class="talk-description"
+							data-i18n="speaking.talks.4.description"
+						>
+							Паттерны проектирования и масштабируемая архитектура
+						</p>
+						<span
+							class="talk-link-text"
+							data-i18n="speaking.talks.4.link"
+							>Смотреть на YouTube →</span
+						>
 					</div>
 				</a>
 
@@ -469,8 +953,18 @@ import '../styles/global.css';
 					</div>
 					<div class="talk-content">
 						<h3 data-i18n="speaking.talks.5.conference">МТУСИ</h3>
-						<p class="talk-title" data-i18n="speaking.talks.5.title">Преподавание Flutter-разработки</p>
-						<p class="talk-description" data-i18n="speaking.talks.5.description">Ведение курса по разработке мобильных приложений</p>
+						<p
+							class="talk-title"
+							data-i18n="speaking.talks.5.title"
+						>
+							Преподавание Flutter-разработки
+						</p>
+						<p
+							class="talk-description"
+							data-i18n="speaking.talks.5.description"
+						>
+							Ведение курса по разработке мобильных приложений
+						</p>
 					</div>
 				</div>
 			</div>
@@ -479,33 +973,76 @@ import '../styles/global.css';
 		<!-- Contact Section -->
 		<section id="contact">
 			<h2 data-i18n="contact.title">Свяжитесь со мной</h2>
-			
+
 			<div class="contact-grid">
 				<div class="contact-main">
-					<p class="contact-intro" data-i18n="contact.intro">Открыт для интересных проектов и предложений о сотрудничестве.</p>
-					<p class="contact-hint"><span data-i18n="contact.hint">Если долго не отвечаю — возможно я </span><span class="overtime-link" data-i18n="contact.overtime">overtime</span></p>
-					
-					<a href="https://t.me/a1exs_dev" class="telegram-button" target="_blank" rel="noopener">
-						<img src="/images/logos/telegram.svg" alt="Telegram" class="telegram-icon" />
+					<p class="contact-intro" data-i18n="contact.intro">
+						Открыт для интересных проектов и предложений о
+						сотрудничестве.
+					</p>
+					<p class="contact-hint">
+						<span data-i18n="contact.hint"
+							>Если долго не отвечаю — возможно я
+						</span><span
+							class="overtime-link"
+							data-i18n="contact.overtime">overtime</span>
+					</p>
+
+					<a
+						href="https://t.me/a1exs_dev"
+						class="telegram-button"
+						target="_blank"
+						rel="noopener"
+					>
+						<img
+							src="/images/logos/telegram.svg"
+							alt="Telegram"
+							class="telegram-icon"
+						/>
 						<span data-i18n="contact.cta">Написать в Telegram</span>
 					</a>
 				</div>
-				
+
 				<div class="contact-links">
 					<h3 data-i18n="contact.otherWays">Другие способы связи</h3>
 					<div class="contact-links-list">
-						<a href="https://github.com/alexsvdk" target="_blank" rel="noopener" class="contact-link">
-							<img src="/images/logos/github-icon-1.svg" alt="GitHub" class="contact-icon" loading="lazy" />
+						<a
+							href="https://github.com/alexsvdk"
+							target="_blank"
+							rel="noopener"
+							class="contact-link"
+						>
+							<img
+								src="/images/logos/github-icon-1.svg"
+								alt="GitHub"
+								class="contact-icon"
+								loading="lazy"
+							/>
 							<span data-i18n="contact.links.github">GitHub</span>
 						</a>
-						<a href="https://www.linkedin.com/in/a1exs/" target="_blank" rel="noopener" class="contact-link">
-							<img src="/images/logos/linkedin-icon-1.svg" alt="LinkedIn" class="contact-icon" loading="lazy" />
-							<span data-i18n="contact.links.linkedin">LinkedIn</span>
+						<a
+							href="https://www.linkedin.com/in/a1exs/"
+							target="_blank"
+							rel="noopener"
+							class="contact-link"
+						>
+							<img
+								src="/images/logos/linkedin-icon-1.svg"
+								alt="LinkedIn"
+								class="contact-icon"
+								loading="lazy"
+							/>
+							<span data-i18n="contact.links.linkedin"
+								>LinkedIn</span
+							>
 						</a>
-					<a href="mailto:alex.svdk@gmail.com" class="contact-link">
-						<span class="email-at-symbol">@</span>
-						<span>alex.svdk@gmail.com</span>
-					</a>
+						<a
+							href="mailto:alex.svdk@gmail.com"
+							class="contact-link"
+						>
+							<span class="email-at-symbol">@</span>
+							<span>alex.svdk@gmail.com</span>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -521,23 +1058,32 @@ import '../styles/global.css';
 		</footer>
 
 		<!-- Overtime Modal -->
-		<div id="overtime-modal" class="overtime-modal" role="dialog" aria-labelledby="overtime-modal-title" aria-modal="true">
+		<div
+			id="overtime-modal"
+			class="overtime-modal"
+			role="dialog"
+			aria-labelledby="overtime-modal-title"
+			aria-modal="true"
+		>
 			<div class="overtime-modal-backdrop"></div>
 			<div class="overtime-modal-content">
-				<button class="overtime-modal-close" aria-label="Close modal">&times;</button>
-				<h2 id="overtime-modal-title" data-i18n="overtime.title">🚀 Overtime Mode Activated!</h2>
+				<button class="overtime-modal-close" aria-label="Close modal"
+					>&times;</button
+				>
+				<h2 id="overtime-modal-title" data-i18n="overtime.title">
+					🚀 Overtime Mode Activated!
+				</h2>
 				<p data-i18n="overtime.message">Но лучше отдыхай иногда 😄</p>
 				<div class="overtime-spotify-container">
-					<iframe 
-						style="border-radius:12px" 
-						src="https://open.spotify.com/embed/track/0JiVR83pQ3R4ydHvZ8qQTe?utm_source=generator" 
-						width="100%" 
-						height="152" 
-						frameborder="0" 
-						allowfullscreen="" 
-						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+					<iframe
+						frameborder="0"
+						allow="clipboard-write"
+						style="border:none;width:100%;height:244px;"
+						width="100%"
+						height="244"
+						src="https://music.yandex.ru/iframe/album/32933362/track/130261232"
 						loading="lazy"
-						title="Overtime by Alexey Shvedchikov on Spotify"
+						title="Overtime by Стереоветер on Yandex Music"
 					></iframe>
 				</div>
 			</div>
@@ -545,259 +1091,305 @@ import '../styles/global.css';
 
 		<script>
 			// Navigation: Highlight active section
-			document.addEventListener('DOMContentLoaded', () => {
-				const navLinks = document.querySelectorAll('#navigation a');
-				const sections = document.querySelectorAll('section[id], header[id]');
+			document.addEventListener("DOMContentLoaded", () => {
+				const navLinks = document.querySelectorAll("#navigation a");
+				const sections = document.querySelectorAll(
+					"section[id], header[id]",
+				);
 
 				// Intersection Observer for active section
 				const observerOptions = {
 					root: null,
-					rootMargin: '-100px 0px -66%',
-					threshold: 0
+					rootMargin: "-100px 0px -66%",
+					threshold: 0,
 				};
 
 				const observer = new IntersectionObserver((entries) => {
-					entries.forEach(entry => {
+					entries.forEach((entry) => {
 						if (entry.isIntersecting) {
-							const id = entry.target.getAttribute('id');
-							navLinks.forEach(link => {
-								link.classList.remove('active');
-								if (link.getAttribute('href') === `#${id}`) {
-									link.classList.add('active');
+							const id = entry.target.getAttribute("id");
+							navLinks.forEach((link) => {
+								link.classList.remove("active");
+								if (link.getAttribute("href") === `#${id}`) {
+									link.classList.add("active");
 								}
 							});
 						}
 					});
 				}, observerOptions);
 
-				sections.forEach(section => observer.observe(section));
+				sections.forEach((section) => observer.observe(section));
 
-			// Smooth scroll on click (backup for browsers without CSS scroll-behavior)
-			navLinks.forEach(link => {
-				link.addEventListener('click', (e) => {
-					e.preventDefault();
-					const targetId = link.getAttribute('href')?.substring(1);
-					if (!targetId) return;
-					const targetSection = document.getElementById(targetId);
-					if (targetSection) {
-						targetSection.scrollIntoView({ behavior: 'smooth' });
-						// Close mobile menu after click - Story 2.7
-						const navMenu = document.querySelector('.nav-menu');
-						const hamburger = document.querySelector('.hamburger');
-						if (navMenu && hamburger) {
-							navMenu.classList.remove('open');
-							hamburger.setAttribute('aria-expanded', 'false');
+				// Smooth scroll on click (backup for browsers without CSS scroll-behavior)
+				navLinks.forEach((link) => {
+					link.addEventListener("click", (e) => {
+						e.preventDefault();
+						const targetId = link
+							.getAttribute("href")
+							?.substring(1);
+						if (!targetId) return;
+						const targetSection = document.getElementById(targetId);
+						if (targetSection) {
+							targetSection.scrollIntoView({
+								behavior: "smooth",
+							});
+							// Close mobile menu after click - Story 2.7
+							const navMenu = document.querySelector(".nav-menu");
+							const hamburger =
+								document.querySelector(".hamburger");
+							if (navMenu && hamburger) {
+								navMenu.classList.remove("open");
+								hamburger.setAttribute(
+									"aria-expanded",
+									"false",
+								);
+							}
 						}
-					}
+					});
 				});
-			});
 
-			// Hamburger menu toggle - Story 2.7
-			const hamburger = document.querySelector('.hamburger');
-			const navMenu = document.querySelector('.nav-menu');
-			
-			if (hamburger && navMenu) {
-				hamburger.addEventListener('click', () => {
-					const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-					hamburger.setAttribute('aria-expanded', !isExpanded ? 'true' : 'false');
-					navMenu.classList.toggle('open');
-				});
-			}				// Skills: Animate stars on scroll into view - Story 2.5
-				const skillItems = document.querySelectorAll('.skill-item');
+				// Hamburger menu toggle - Story 2.7
+				const hamburger = document.querySelector(".hamburger");
+				const navMenu = document.querySelector(".nav-menu");
+
+				if (hamburger && navMenu) {
+					hamburger.addEventListener("click", () => {
+						const isExpanded =
+							hamburger.getAttribute("aria-expanded") === "true";
+						hamburger.setAttribute(
+							"aria-expanded",
+							!isExpanded ? "true" : "false",
+						);
+						navMenu.classList.toggle("open");
+					});
+				} // Skills: Animate stars on scroll into view - Story 2.5
+				const skillItems = document.querySelectorAll(".skill-item");
 				const skillObserverOptions = {
 					root: null,
-					rootMargin: '0px',
-					threshold: 0.3
+					rootMargin: "0px",
+					threshold: 0.3,
 				};
 
 				const skillObserver = new IntersectionObserver((entries) => {
-					entries.forEach(entry => {
+					entries.forEach((entry) => {
 						if (entry.isIntersecting) {
-							entry.target.classList.add('in-view');
+							entry.target.classList.add("in-view");
 							skillObserver.unobserve(entry.target);
 						}
 					});
 				}, skillObserverOptions);
 
-				skillItems.forEach(item => skillObserver.observe(item));
+				skillItems.forEach((item) => skillObserver.observe(item));
 
-			// Overtime Easter Egg - Story 3.2
-			const overtimeLink = document.querySelector('.overtime-link');
-			const overtimeModal = document.getElementById('overtime-modal');
-			const modalBackdrop = overtimeModal?.querySelector('.overtime-modal-backdrop');
-			const modalClose = overtimeModal?.querySelector('.overtime-modal-close');
-			const modalContent = overtimeModal?.querySelector('.overtime-modal-content');
+				// Overtime Easter Egg - Story 3.2
+				const overtimeLink = document.querySelector(".overtime-link");
+				const overtimeModal = document.getElementById("overtime-modal");
+				const modalBackdrop = overtimeModal?.querySelector(
+					".overtime-modal-backdrop",
+				);
+				const modalClose = overtimeModal?.querySelector(
+					".overtime-modal-close",
+				);
+				const modalContent = overtimeModal?.querySelector(
+					".overtime-modal-content",
+				);
 
-			function openOvertimeModal() {
-				if (!overtimeModal) return;
-				overtimeModal.classList.add('open');
-				document.body.style.overflow = 'hidden';
-				
-				// Focus trap - focus first focusable element
-				const firstFocusable = modalClose as HTMLElement;
-				firstFocusable?.focus();
-			}
+				function openOvertimeModal() {
+					if (!overtimeModal) return;
+					overtimeModal.classList.add("open");
+					document.body.style.overflow = "hidden";
 
-			function closeOvertimeModal() {
-				if (!overtimeModal) return;
-				overtimeModal.classList.remove('open');
-				document.body.style.overflow = '';
-			}
-
-			if (overtimeLink && overtimeModal) {
-				overtimeLink.addEventListener('click', (e) => {
-					e.preventDefault();
-					openOvertimeModal();
-				});
-
-				// Close on backdrop click
-				modalBackdrop?.addEventListener('click', closeOvertimeModal);
-
-				// Close on close button click
-				modalClose?.addEventListener('click', closeOvertimeModal);
-
-				// Close on ESC key
-				document.addEventListener('keydown', (e) => {
-					if (e.key === 'Escape' && overtimeModal.classList.contains('open')) {
-						closeOvertimeModal();
-					}
-				});
-
-				// Prevent clicks inside modal content from closing
-				modalContent?.addEventListener('click', (e) => {
-					e.stopPropagation();
-				});
-			}
-
-			// Auto-scroll for screenshot galleries
-			const screenshotGrids = document.querySelectorAll('.project-screenshots-grid');
-			screenshotGrids.forEach(grid => {
-				if (!(grid instanceof HTMLElement)) return;
-				
-				let scrollAmount = 0;
-				const scrollSpeed = 0.05; // pixels per frame (10x slower)
-				const maxScroll = grid.scrollWidth - grid.clientWidth;
-
-				// Pause auto-scroll on hover
-				let isPaused = false;
-				grid.addEventListener('mouseenter', () => {
-					isPaused = true;
-				});
-				
-				grid.addEventListener('mouseleave', () => {
-					isPaused = false;
-				});
-
-				// Continuous auto-scroll with pause on hover
-				function autoScroll() {
-					if (!isPaused && maxScroll > 0) {
-						scrollAmount += scrollSpeed;
-						if (scrollAmount >= maxScroll) {
-							scrollAmount = 0;
-						}
-						grid.scrollLeft = scrollAmount;
-					}
-					requestAnimationFrame(autoScroll);
+					// Focus trap - focus first focusable element
+					const firstFocusable = modalClose as HTMLElement;
+					firstFocusable?.focus();
 				}
 
-				autoScroll();
-			});
-		});
-
-		// Language switcher functionality
-		(async () => {
-			const DEFAULT_LANG = 'ru';
-			const SUPPORTED_LANGS = ['ru', 'en'];
-			let currentLang = DEFAULT_LANG;
-			let translations: any = {};
-
-			// Detect browser language
-			function detectBrowserLang(): string {
-				const browserLang = navigator.language.toLowerCase();
-				if (browserLang.startsWith('ru')) return 'ru';
-				if (browserLang.startsWith('en')) return 'en';
-				return DEFAULT_LANG;
-			}
-
-			// Load language file
-			async function loadLanguage(lang: string): Promise<any> {
-				try {
-					const response = await fetch(`/content/${lang}.json`);
-					if (!response.ok) throw new Error(`Failed to load ${lang}`);
-					return await response.json();
-				} catch (error) {
-					console.error('Error loading language:', error);
-					return null;
+				function closeOvertimeModal() {
+					if (!overtimeModal) return;
+					overtimeModal.classList.remove("open");
+					document.body.style.overflow = "";
 				}
-			}
 
-			// Apply translations to page
-			function applyTranslations(data: any): void {
-				// Update all elements with data-i18n
-				document.querySelectorAll('[data-i18n]').forEach(el => {
-					const key = el.getAttribute('data-i18n');
-					if (!key) return;
-					const value = getNestedValue(data, key);
-					if (value) {
-						if (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement) {
-							el.placeholder = value;
-						} else {
-							el.textContent = value;
-						}
+				if (overtimeLink && overtimeModal) {
+					overtimeLink.addEventListener("click", (e) => {
+						e.preventDefault();
+						openOvertimeModal();
+					});
 
-						// Update glitch-text data-text attribute
-						if (el.classList.contains('glitch-text') && key === 'hero.name') {
-							el.setAttribute('data-text', value);
+					// Close on backdrop click
+					modalBackdrop?.addEventListener(
+						"click",
+						closeOvertimeModal,
+					);
+
+					// Close on close button click
+					modalClose?.addEventListener("click", closeOvertimeModal);
+
+					// Close on ESC key
+					document.addEventListener("keydown", (e) => {
+						if (
+							e.key === "Escape" &&
+							overtimeModal.classList.contains("open")
+						) {
+							closeOvertimeModal();
 						}
+					});
+
+					// Prevent clicks inside modal content from closing
+					modalContent?.addEventListener("click", (e) => {
+						e.stopPropagation();
+					});
+				}
+
+				// Auto-scroll for screenshot galleries
+				const screenshotGrids = document.querySelectorAll(
+					".project-screenshots-grid",
+				);
+				screenshotGrids.forEach((grid) => {
+					if (!(grid instanceof HTMLElement)) return;
+
+					let scrollAmount = 0;
+					const scrollSpeed = 0.05; // pixels per frame (10x slower)
+					const maxScroll = grid.scrollWidth - grid.clientWidth;
+
+					// Pause auto-scroll on hover
+					let isPaused = false;
+					grid.addEventListener("mouseenter", () => {
+						isPaused = true;
+					});
+
+					grid.addEventListener("mouseleave", () => {
+						isPaused = false;
+					});
+
+					// Continuous auto-scroll with pause on hover
+					function autoScroll() {
+						if (!isPaused && maxScroll > 0) {
+							scrollAmount += scrollSpeed;
+							if (scrollAmount >= maxScroll) {
+								scrollAmount = 0;
+							}
+							grid.scrollLeft = scrollAmount;
+						}
+						requestAnimationFrame(autoScroll);
 					}
-				});
 
-				// Update aria-labels and titles
-				document.querySelectorAll('[data-i18n-aria]').forEach(el => {
-					const key = el.getAttribute('data-i18n-aria');
-					if (!key) return;
-					const value = getNestedValue(data, key);
-					if (value) el.setAttribute('aria-label', value);
-				});
-			}
-
-			// Helper to get nested object value by path (e.g., "nav.about")
-			function getNestedValue(obj: any, path: string): any {
-				return path.split('.').reduce((acc: any, part: string) => acc?.[part], obj);
-			}
-
-			// Switch language
-			async function switchLanguage(lang: string): Promise<void> {
-				if (!SUPPORTED_LANGS.includes(lang)) lang = DEFAULT_LANG;
-				
-				const data = await loadLanguage(lang);
-				if (!data) return;
-
-				translations = data;
-				currentLang = lang;
-				
-				applyTranslations(data);
-				localStorage.setItem('preferredLang', lang);
-				
-				// Update active button
-				document.querySelectorAll('.language-switcher button').forEach(btn => {
-					btn.classList.toggle('active', btn.getAttribute('lang') === lang);
-				});
-			}
-
-			// Initialize
-			const savedLang = localStorage.getItem('preferredLang');
-			const initialLang = savedLang || detectBrowserLang();
-			await switchLanguage(initialLang);
-
-			// Add event listeners to language buttons
-			document.querySelectorAll('.language-switcher button').forEach(btn => {
-				btn.addEventListener('click', () => {
-					const lang = btn.getAttribute('lang');
-					if (lang) switchLanguage(lang);
+					autoScroll();
 				});
 			});
-		})();
+
+			// Language switcher functionality
+			(async () => {
+				const DEFAULT_LANG = "ru";
+				const SUPPORTED_LANGS = ["ru", "en"];
+				let currentLang = DEFAULT_LANG;
+				let translations: any = {};
+
+				// Detect browser language
+				function detectBrowserLang(): string {
+					const browserLang = navigator.language.toLowerCase();
+					if (browserLang.startsWith("ru")) return "ru";
+					if (browserLang.startsWith("en")) return "en";
+					return DEFAULT_LANG;
+				}
+
+				// Load language file
+				async function loadLanguage(lang: string): Promise<any> {
+					try {
+						const response = await fetch(`/content/${lang}.json`);
+						if (!response.ok)
+							throw new Error(`Failed to load ${lang}`);
+						return await response.json();
+					} catch (error) {
+						console.error("Error loading language:", error);
+						return null;
+					}
+				}
+
+				// Apply translations to page
+				function applyTranslations(data: any): void {
+					// Update all elements with data-i18n
+					document.querySelectorAll("[data-i18n]").forEach((el) => {
+						const key = el.getAttribute("data-i18n");
+						if (!key) return;
+						const value = getNestedValue(data, key);
+						if (value) {
+							if (
+								el instanceof HTMLInputElement ||
+								el instanceof HTMLTextAreaElement
+							) {
+								el.placeholder = value;
+							} else {
+								el.textContent = value;
+							}
+
+							// Update glitch-text data-text attribute
+							if (
+								el.classList.contains("glitch-text") &&
+								key === "hero.name"
+							) {
+								el.setAttribute("data-text", value);
+							}
+						}
+					});
+
+					// Update aria-labels and titles
+					document
+						.querySelectorAll("[data-i18n-aria]")
+						.forEach((el) => {
+							const key = el.getAttribute("data-i18n-aria");
+							if (!key) return;
+							const value = getNestedValue(data, key);
+							if (value) el.setAttribute("aria-label", value);
+						});
+				}
+
+				// Helper to get nested object value by path (e.g., "nav.about")
+				function getNestedValue(obj: any, path: string): any {
+					return path
+						.split(".")
+						.reduce((acc: any, part: string) => acc?.[part], obj);
+				}
+
+				// Switch language
+				async function switchLanguage(lang: string): Promise<void> {
+					if (!SUPPORTED_LANGS.includes(lang)) lang = DEFAULT_LANG;
+
+					const data = await loadLanguage(lang);
+					if (!data) return;
+
+					translations = data;
+					currentLang = lang;
+
+					applyTranslations(data);
+					localStorage.setItem("preferredLang", lang);
+
+					// Update active button
+					document
+						.querySelectorAll(".language-switcher button")
+						.forEach((btn) => {
+							btn.classList.toggle(
+								"active",
+								btn.getAttribute("lang") === lang,
+							);
+						});
+				}
+
+				// Initialize
+				const savedLang = localStorage.getItem("preferredLang");
+				const initialLang = savedLang || detectBrowserLang();
+				await switchLanguage(initialLang);
+
+				// Add event listeners to language buttons
+				document
+					.querySelectorAll(".language-switcher button")
+					.forEach((btn) => {
+						btn.addEventListener("click", () => {
+							const lang = btn.getAttribute("lang");
+							if (lang) switchLanguage(lang);
+						});
+					});
+			})();
 		</script>
 	</body>
 </html>
