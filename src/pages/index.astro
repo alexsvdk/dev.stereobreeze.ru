@@ -93,44 +93,122 @@ import '../styles/global.css';
 		<section id="skills">
 			<h2>Навыки</h2>
 			
-			<div class="skill-category">
-				<h3>Мобильная разработка</h3>
-				<ul>
-					<li>Dart / Flutter (6 лет)</li>
-					<li>Kotlin / Android SDK (7 лет)</li>
-					<li>State Management (Provider, Riverpod, BLoC)</li>
-					<li>Clean Architecture, MVVM</li>
-				</ul>
-			</div>
+			<div class="skills-grid">
+				<div class="skill-item" data-skill-level="5">
+					<div class="skill-star-container">
+						<svg class="skill-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+							<defs>
+								<filter id="glow-mobile">
+									<feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+									<feMerge>
+										<feMergeNode in="coloredBlur"/>
+										<feMergeNode in="SourceGraphic"/>
+									</feMerge>
+								</filter>
+							</defs>
+							<!-- 5-point star -->
+							<polygon class="star-bg" points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40" />
+							<polygon class="star-fill" points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40" data-points="5" />
+						</svg>
+						<div class="skill-level-text">★★★★★</div>
+					</div>
+					<h3>Мобильная разработка</h3>
+					<div class="skill-tooltip">
+						<ul>
+							<li>Dart / Flutter (6 лет)</li>
+							<li>Kotlin / Android SDK (7 лет)</li>
+							<li>State Management (Provider, Riverpod, BLoC)</li>
+							<li>Clean Architecture, MVVM</li>
+						</ul>
+					</div>
+				</div>
 
-			<div class="skill-category">
-				<h3>Backend & API</h3>
-				<ul>
-					<li>Kotlin / Ktor</li>
-					<li>REST API, GraphQL</li>
-					<li>Проектирование клиент-серверного взаимодействия</li>
-				</ul>
-			</div>
+				<div class="skill-item" data-skill-level="4">
+					<div class="skill-star-container">
+						<svg class="skill-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+							<defs>
+								<filter id="glow-backend">
+									<feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+									<feMerge>
+										<feMergeNode in="coloredBlur"/>
+										<feMergeNode in="SourceGraphic"/>
+									</feMerge>
+								</filter>
+							</defs>
+							<!-- 5-point star -->
+							<polygon class="star-bg" points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40" />
+							<polygon class="star-fill" points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40" data-points="4" />
+						</svg>
+						<div class="skill-level-text">★★★★☆</div>
+					</div>
+					<h3>Backend & API</h3>
+					<div class="skill-tooltip">
+						<ul>
+							<li>Kotlin / Ktor</li>
+							<li>REST API, GraphQL</li>
+							<li>Проектирование клиент-серверного взаимодействия</li>
+						</ul>
+					</div>
+				</div>
 
-			<div class="skill-category">
-				<h3>DevOps & Инфраструктура</h3>
-				<ul>
-					<li>Docker / Kubernetes</li>
-					<li>CI/CD (GitHub Actions, GitLab CI)</li>
-					<li>Fastlane</li>
-					<li>Автоматизация процессов</li>
-				</ul>
-			</div>
+				<div class="skill-item" data-skill-level="4">
+					<div class="skill-star-container">
+						<svg class="skill-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+							<defs>
+								<filter id="glow-devops">
+									<feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+									<feMerge>
+										<feMergeNode in="coloredBlur"/>
+										<feMergeNode in="SourceGraphic"/>
+									</feMerge>
+								</filter>
+							</defs>
+							<!-- 5-point star -->
+							<polygon class="star-bg" points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40" />
+							<polygon class="star-fill" points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40" data-points="4" />
+						</svg>
+						<div class="skill-level-text">★★★★☆</div>
+					</div>
+					<h3>DevOps & Инфраструктура</h3>
+					<div class="skill-tooltip">
+						<ul>
+							<li>Docker / Kubernetes</li>
+							<li>CI/CD (GitHub Actions, GitLab CI)</li>
+							<li>Fastlane</li>
+							<li>Автоматизация процессов</li>
+						</ul>
+					</div>
+				</div>
 
-			<div class="skill-category">
-				<h3>Лидерство и процессы</h3>
-				<ul>
-					<li>Руководство командами (3 человека)</li>
-					<li>Менторство и развитие разработчиков</li>
-					<li>Код-ревью и архитектурные ревью</li>
-					<li>Найм и проведение собеседований</li>
-					<li>Agile / Scrum</li>
-				</ul>
+				<div class="skill-item" data-skill-level="5">
+					<div class="skill-star-container">
+						<svg class="skill-star" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+							<defs>
+								<filter id="glow-soft">
+									<feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+									<feMerge>
+										<feMergeNode in="coloredBlur"/>
+										<feMergeNode in="SourceGraphic"/>
+									</feMerge>
+								</filter>
+							</defs>
+							<!-- 5-point star -->
+							<polygon class="star-bg" points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40" />
+							<polygon class="star-fill" points="50,10 61,40 95,40 68,60 79,90 50,70 21,90 32,60 5,40 39,40" data-points="5" />
+						</svg>
+						<div class="skill-level-text">★★★★★</div>
+					</div>
+					<h3>Лидерство и процессы</h3>
+					<div class="skill-tooltip">
+						<ul>
+							<li>Руководство командами (3 человека)</li>
+							<li>Менторство и развитие разработчиков</li>
+							<li>Код-ревью и архитектурные ревью</li>
+							<li>Найм и проведение собеседований</li>
+							<li>Agile / Scrum</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -294,6 +372,25 @@ import '../styles/global.css';
 						}
 					});
 				});
+
+				// Skills: Animate stars on scroll into view - Story 2.5
+				const skillItems = document.querySelectorAll('.skill-item');
+				const skillObserverOptions = {
+					root: null,
+					rootMargin: '0px',
+					threshold: 0.3
+				};
+
+				const skillObserver = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('in-view');
+							skillObserver.unobserve(entry.target);
+						}
+					});
+				}, skillObserverOptions);
+
+				skillItems.forEach(item => skillObserver.observe(item));
 			});
 		</script>
 	</body>
