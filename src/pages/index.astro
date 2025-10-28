@@ -30,9 +30,8 @@ import '../styles/global.css';
 			</ul>
 		</nav>
 
-		<main class="scroll-container">
-			<!-- Hero Section -->
-			<section id="hero">
+		<!-- Hero Section -->
+		<section id="hero">
 			<div class="hero-video-container">
 				<video class="hero-video" autoplay muted loop playsinline poster="/images/hero-poster.png">
 					<source src="/video/hero-background.mp4" type="video/mp4">
@@ -223,16 +222,18 @@ import '../styles/global.css';
 			<h2>Проекты</h2>
 
 			<article class="project">
-				<div class="project-screenshot-container">
+				<div class="project-header">
 					<img 
 						src="/images/logos/yandex-pro.jpg" 
-						alt="Яндекс Про - скриншот приложения" 
-						class="project-screenshot"
+						alt="Яндекс Про logo" 
+						class="project-logo"
 						loading="lazy"
 					/>
+					<div class="project-title-group">
+						<h3>Яндекс Про</h3>
+						<p class="project-subtitle">Суперап для профессионалов</p>
+					</div>
 				</div>
-				<h3>Яндекс Про</h3>
-				<p class="project-subtitle">Суперап для профессионалов</p>
 				<p class="project-description">Суперап, объединяющий сервисы Яндекса для водителей, курьеров и самозанятых. Более 1 миллиона активных пользователей.</p>
 				<p class="project-role">Роль: Ведущий Flutter-разработчик, технический лидер</p>
 				<p class="project-tech">Flutter • Dart • BLoC • Clean Architecture</p>
@@ -245,6 +246,18 @@ import '../styles/global.css';
 			</article>
 
 			<article class="project">
+				<div class="project-header">
+					<img 
+						src="/images/logos/era-of-change.png" 
+						alt="Эра перемен logo" 
+						class="project-logo"
+						loading="lazy"
+					/>
+					<div class="project-title-group">
+						<h3>Эра перемен</h3>
+						<p class="project-subtitle">Крипто-новости и аналитика</p>
+					</div>
+				</div>
 				<div class="project-screenshots-grid">
 					<div class="project-screenshot-container">
 						<img 
@@ -279,8 +292,6 @@ import '../styles/global.css';
 						/>
 					</div>
 				</div>
-				<h3>Эра перемен</h3>
-				<p class="project-subtitle">Крипто-новости и аналитика</p>
 				<p class="project-description">Приложение с новостями и аналитикой криптовалют и блокчейн-технологий. 4 уровня подписки с оплатой через App Store, Google Play и RuStore.</p>
 				<p class="project-role">Роль: Ведущий разработчик и архитектор</p>
 				<p class="project-tech">Flutter • Dart • In-App Purchases • REST API</p>
@@ -357,20 +368,35 @@ import '../styles/global.css';
 
 		<!-- Contact Section -->
 		<section id="contact">
-			<h2>Свяжитесь со мной</h2>
-			<p>Открыт для интересных проектов и предложений о сотрудничестве.</p>
-			<p>Если долго не отвечаю — возможно я <span class="overtime-link">overtime</span></p>
-			<a href="https://t.me/a1exs_dev" class="telegram-button" target="_blank" rel="noopener">Написать в Telegram</a>
-			<div class="social-links">
-				<h3>Также можно найти здесь:</h3>
-				<ul>
-					<li><a href="https://github.com/alexsvdk" target="_blank" rel="noopener">GitHub</a></li>
-					<li><a href="https://www.linkedin.com/in/a1exs/" target="_blank" rel="noopener">LinkedIn</a></li>
-					<li><a href="mailto:alex.svdk@gmail.com">Email: alex.svdk@gmail.com</a></li>
-				</ul>
+			<div class="contact-container">
+				<h2>Свяжитесь со мной</h2>
+				<p class="contact-intro">Открыт для интересных проектов и предложений о сотрудничестве.</p>
+				<p class="contact-hint">Если долго не отвечаю — возможно я <span class="overtime-link">overtime</span></p>
+				
+				<a href="https://t.me/a1exs_dev" class="telegram-button" target="_blank" rel="noopener">
+					<span class="button-icon">📱</span>
+					Написать в Telegram
+				</a>
+				
+				<div class="social-links">
+					<h3>Также можно найти здесь:</h3>
+					<div class="social-grid">
+						<a href="https://github.com/alexsvdk" target="_blank" rel="noopener" class="social-link">
+							<span class="social-icon">🔗</span>
+							<span>GitHub</span>
+						</a>
+						<a href="https://www.linkedin.com/in/a1exs/" target="_blank" rel="noopener" class="social-link">
+							<span class="social-icon">💼</span>
+							<span>LinkedIn</span>
+						</a>
+						<a href="mailto:alex.svdk@gmail.com" class="social-link">
+							<span class="social-icon">✉️</span>
+							<span>Email</span>
+						</a>
+					</div>
+				</div>
 			</div>
 		</section>
-		</main>
 
 		<!-- Footer -->
 		<footer>
