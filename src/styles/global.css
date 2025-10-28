@@ -143,6 +143,10 @@ footer {
 }
 
 /* Section Spacing */
+section:not(#hero) {
+	padding-top: calc(var(--section-spacing) + 4rem);
+}
+
 section + section {
 	margin-top: 2rem;
 }
@@ -216,10 +220,8 @@ header[id] {
 	scroll-margin-top: 5rem;
 }
 
-/* Adjust body padding for fixed nav */
-body {
-	padding-top: 4rem;
-}
+/* Adjust body padding for fixed nav - removed to eliminate gap before hero video */
+/* Sections after hero will have their own top padding */
 
 /* CTA Button - Story 2.1 */
 .cta-button,
@@ -624,17 +626,16 @@ section h2::before {
 		font-size: 1rem;
 	}
 	
+	/* Disable hover tooltips completely on mobile */
 	.skill-tooltip {
-		position: fixed;
-		left: 1rem;
-		right: 1rem;
-		bottom: 1rem;
-		max-height: 50vh;
-		overflow-y: auto;
-		z-index: 1000;
+		display: none !important;
 	}
 	
-	/* Disable hover tooltip on mobile - keeping it hidden */
+	.skill-item:hover .skill-tooltip {
+		max-height: 0;
+		opacity: 0;
+		padding: 0;
+	}
 }
 
 /* Portfolio - Glossy Screenshot Effect - Story 2.6 */
