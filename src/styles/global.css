@@ -43,10 +43,42 @@ body {
 	font-family: var(--font-family-base);
 	font-size: var(--font-size-base);
 	line-height: var(--line-height-base);
-	background-color: var(--color-bg-dark);
+	background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 25%, #16213e 50%, #0f3460 75%, #0a0a0a 100%);
+	background-size: 400% 400%;
+	animation: gradientShift 60s ease infinite;
 	color: var(--color-text-primary);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Animated Gradient Background - Story 2.2 */
+@keyframes gradientShift {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+	body {
+		animation: none;
+		background: var(--color-bg-dark);
+	}
+	
+	h1, h2 {
+		text-shadow: none;
+	}
+	
+	.cta-button,
+	.telegram-button {
+		transition: none;
+	}
 }
 
 /* Typography */
