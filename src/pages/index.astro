@@ -21,12 +21,12 @@ import '../styles/global.css';
 				<span></span>
 			</button>
 			<ul class="nav-menu">
-				<li><a href="#about">О себе</a></li>
-				<li><a href="#experience">Опыт</a></li>
-				<li><a href="#skills">Навыки</a></li>
-				<li><a href="#portfolio">Проекты</a></li>
-				<li><a href="#speaking">Выступления</a></li>
-				<li><a href="#contact">Контакты</a></li>
+				<li><a href="#about" data-i18n="nav.about">О себе</a></li>
+				<li><a href="#experience" data-i18n="nav.experience">Опыт</a></li>
+				<li><a href="#skills" data-i18n="nav.skills">Навыки</a></li>
+				<li><a href="#portfolio" data-i18n="nav.portfolio">Проекты</a></li>
+				<li><a href="#speaking" data-i18n="nav.speaking">Выступления</a></li>
+				<li><a href="#contact" data-i18n="nav.contact">Контакты</a></li>
 			</ul>
 		</nav>
 
@@ -39,61 +39,58 @@ import '../styles/global.css';
 				<div class="hero-overlay"></div>
 			</div>
 			<div class="hero-content">
-				<h1 class="glitch-text" data-text="Алексей Шведчиков">Алексей Шведчиков</h1>
-				<p>Руководитель разработки, Fullstack-разработчик, Архитектор решений</p>
-				<a href="#contact" class="cta-button">Связаться со мной</a>
+				<h1 class="glitch-text" data-text="Алексей Шведчиков" data-i18n="hero.name">Алексей Шведчиков</h1>
+				<p data-i18n="hero.tagline">Руководитель разработки, Fullstack-разработчик, Архитектор решений</p>
+				<a href="#contact" class="cta-button" data-i18n="hero.cta">Связаться со мной</a>
 			</div>
 		</section>		<!-- About Section -->
 		<section id="about">
-			<h2>О себе</h2>
-			<p>Ведущий Flutter-разработчик с 6 годами опыта. Работаю над проектами от стартап-MVP до enterprise-систем с миллионами пользователей. В Яндексе руковожу командой и проектирую архитектуру для 100+ разработчиков.</p>
-			<p>Меня мотивирует создавать качественные, надежные решения. Работаю на совесть — чтобы всё работало железобетонно. Люблю сложные технические вызовы, где нужно сделать возможным то, что кажется невозможным.</p>
-			<p>Помимо кода пишу музыку и выступаю на конференциях. Это развивает креативное мышление и помогает находить нестандартные решения в разработке.</p>
+			<h2 data-i18n="about.title">О себе</h2>
+			<p data-i18n="about.paragraph1">Ведущий Flutter-разработчик с 6 годами опыта. Работаю над проектами от стартап-MVP до enterprise-систем с миллионами пользователей. В Яндексе руковожу командой и проектирую архитектуру для 100+ разработчиков.</p>
+			<p data-i18n="about.paragraph2">Меня мотивирует создавать качественные, надежные решения. Работаю на совесть — чтобы всё работало железобетонно. Люблю сложные технические вызовы, где нужно сделать возможным то, что кажется невозможным.</p>
+			<p data-i18n="about.paragraph3">Помимо кода пишу музыку и выступаю на конференциях. Это развивает креативное мышление и помогает находить нестандартные решения в разработке.</p>
 		</section>
 
 		<!-- Experience Section -->
 		<section id="experience">
-			<h2>Опыт работы</h2>
+			<h2 data-i18n="experience.title">Опыт работы</h2>
 			
 			<article class="experience-item">
 				<div class="experience-header">
-					<img src="/images/logos/yandex-2.svg" alt="Яндекс" class="company-logo" loading="lazy" />
+					<img src="/images/logos/yandex.svg" alt="Яндекс" class="company-logo" loading="lazy" />
 					<div class="experience-title-group">
-						<h3>Яндекс</h3>
-						<p class="position">Ведущий Flutter-разработчик</p>
-						<p class="period">Июнь 2021 — настоящее время</p>
+						<h3 data-i18n="experience.jobs.0.company">Яндекс</h3>
+						<p class="position" data-i18n="experience.jobs.0.role">Ведущий Flutter-разработчик</p>
+						<p class="period" data-i18n="experience.jobs.0.period">Июль 2022 — Настоящее время (2 года)</p>
 					</div>
 				</div>
-				<p class="description">Разрабатываю Яндекс Про — суперап для водителей, курьеров и самозанятых. Более 1 миллиона активных пользователей. Владею полным циклом: от проектирования клиент-серверного взаимодействия до руководства кросс-функциональными командами. Провожу код-ревью и архитектурные ревью, автоматизирую процессы.</p>
+				<p class="description" data-i18n="experience.jobs.0.description">Разрабатываю и поддерживаю Яндекс Про — суперап для профессионалов (курьеры, водители, самозанятые) с аудиторией 1+ млн активных пользователей. Руковожу командой из 3 разработчиков, проектирую архитектуру и внедряю технологические инновации.</p>
 				<ul>
-					<li>Спроектировал архитектуру фича-модулей для команды из 100+ разработчиков, унифицировал интеграции между модулями</li>
-					<li>Разработал протокол переадресаций для динамического добавления новых ветвлений логики без обновления приложения</li>
-					<li>Внедрил AI-бота для классификации и маршрутизации багрепортов, сократил нагрузку на дежурных разработчиков</li>
-					<li>Вырастил 5 стажеров до уровня middle-разработчиков</li>
-					<li>Провел более 100 технических собеседований по Flutter и алгоритмам</li>
-					<li>Руководил крупным NDA-проектом, координировал внутренние команды и двух подрядчиков</li>
+					<li data-i18n="experience.jobs.0.achievements.0">Разработал протокол переадресаций для динамического добавления новых ветвлений логики без обновления приложения</li>
+					<li data-i18n="experience.jobs.0.achievements.1">Внедрил AI-бота для классификации и маршрутизации багрепортов, сократил нагрузку на дежурных разработчиков</li>
+					<li data-i18n="experience.jobs.0.achievements.2">Вырастил 5 стажеров до уровня middle-разработчиков</li>
+					<li data-i18n="experience.jobs.0.achievements.3">Провел более 100 технических собеседований по Flutter и алгоритмам</li>
+					<li data-i18n="experience.jobs.0.achievements.4">Руководил крупным NDA-проектом, координировал внутренние команды и двух подрядчиков</li>
 				</ul>
-				<p class="tech">Flutter • Dart • BLoC • Clean Architecture • CI/CD</p>
-			</article>
-
-			<hr class="section-divider" />
+				<p class="tech" data-i18n="experience.jobs.0.tech">Flutter • Dart • BLoC • Clean Architecture • CI/CD</p>
+			</article>			<hr class="section-divider" />
 
 			<article class="experience-item">
 				<div class="experience-header">
 					<img src="/images/logos/samsung-8.svg" alt="Samsung" class="company-logo" loading="lazy" />
 					<div class="experience-title-group">
-						<h3>IT Школа Samsung</h3>
-						<p class="position">Преподаватель</p>
-						<p class="period">Сентябрь 2019 — Май 2022</p>
+						<h3 data-i18n="experience.jobs.1.company">IT Школа Samsung</h3>
+						<p class="position" data-i18n="experience.jobs.1.role">Преподаватель</p>
+						<p class="period" data-i18n="experience.jobs.1.period">Сентябрь 2019 — Май 2022</p>
 					</div>
 				</div>
-				<p class="description">Преподавал Android-разработку и язык Java. Обучил 3 потока студентов основам мобильной разработки и объектно-ориентированному программированию.</p>
+				<p class="description" data-i18n="experience.jobs.1.description">Преподавал Android-разработку и язык Java. Обучил 3 потока студентов основам мобильной разработки и объектно-ориентированному программированию.</p>
 			</article>
 		</section>
 
 		<!-- Skills Section -->
 		<section id="skills">
-			<h2>Навыки</h2>
+			<h2 data-i18n="skills.title">Навыки</h2>
 			
 			<div class="skills-grid">
 				<div class="skill-item" data-skill-level="5">
@@ -114,13 +111,13 @@ import '../styles/global.css';
 						</svg>
 						<div class="skill-level-text">★★★★★</div>
 					</div>
-					<h3>Мобильная разработка</h3>
+					<h3 data-i18n="skills.categories.0.name">Мобильная разработка</h3>
 					<div class="skill-tooltip">
 						<ul>
-							<li>Dart / Flutter (6 лет)</li>
-							<li>Kotlin / Android SDK (7 лет)</li>
-							<li>State Management (Provider, Riverpod, BLoC)</li>
-							<li>Clean Architecture, MVVM</li>
+							<li data-i18n="skills.categories.0.items.0">Dart / Flutter (6 лет)</li>
+							<li data-i18n="skills.categories.0.items.1">Kotlin / Android SDK (7 лет)</li>
+							<li data-i18n="skills.categories.0.items.2">State Management (Provider, Riverpod, BLoC)</li>
+							<li data-i18n="skills.categories.0.items.3">Clean Architecture, MVVM</li>
 						</ul>
 					</div>
 				</div>
@@ -143,12 +140,12 @@ import '../styles/global.css';
 						</svg>
 						<div class="skill-level-text">★★★★☆</div>
 					</div>
-					<h3>Backend & API</h3>
+					<h3 data-i18n="skills.categories.1.name">Backend & API</h3>
 					<div class="skill-tooltip">
 						<ul>
-							<li>Kotlin / Ktor</li>
-							<li>REST API, GraphQL</li>
-							<li>Проектирование клиент-серверного взаимодействия</li>
+							<li data-i18n="skills.categories.1.items.0">Kotlin / Ktor</li>
+							<li data-i18n="skills.categories.1.items.1">REST API, GraphQL</li>
+							<li data-i18n="skills.categories.1.items.2">Проектирование клиент-серверного взаимодействия</li>
 						</ul>
 					</div>
 				</div>
@@ -171,13 +168,13 @@ import '../styles/global.css';
 						</svg>
 						<div class="skill-level-text">★★★★☆</div>
 					</div>
-					<h3>DevOps & Инфраструктура</h3>
+					<h3 data-i18n="skills.categories.2.name">DevOps & Инфраструктура</h3>
 					<div class="skill-tooltip">
 						<ul>
-							<li>Docker / Kubernetes</li>
-							<li>CI/CD (GitHub Actions, GitLab CI)</li>
-							<li>Fastlane</li>
-							<li>Автоматизация процессов</li>
+							<li data-i18n="skills.categories.2.items.0">Docker / Kubernetes</li>
+							<li data-i18n="skills.categories.2.items.1">CI/CD (GitHub Actions, GitLab CI)</li>
+							<li data-i18n="skills.categories.2.items.2">Fastlane</li>
+							<li data-i18n="skills.categories.2.items.3">Автоматизация процессов</li>
 						</ul>
 					</div>
 				</div>
@@ -200,14 +197,14 @@ import '../styles/global.css';
 						</svg>
 						<div class="skill-level-text">★★★★★</div>
 					</div>
-					<h3>Лидерство и процессы</h3>
+					<h3 data-i18n="skills.categories.3.name">Лидерство и процессы</h3>
 					<div class="skill-tooltip">
 						<ul>
-							<li>Руководство командами (3 человека)</li>
-							<li>Менторство и развитие разработчиков</li>
-							<li>Код-ревью и архитектурные ревью</li>
-							<li>Найм и проведение собеседований</li>
-							<li>Agile / Scrum</li>
+							<li data-i18n="skills.categories.3.items.0">Руководство командами (3 человека)</li>
+							<li data-i18n="skills.categories.3.items.1">Менторство и развитие разработчиков</li>
+							<li data-i18n="skills.categories.3.items.2">Код-ревью и архитектурные ревью</li>
+							<li data-i18n="skills.categories.3.items.3">Найм и проведение собеседований</li>
+							<li data-i18n="skills.categories.3.items.4">Agile / Scrum</li>
 						</ul>
 					</div>
 				</div>
@@ -216,7 +213,7 @@ import '../styles/global.css';
 
 		<!-- Portfolio Section -->
 		<section id="portfolio">
-			<h2>Проекты</h2>
+			<h2 data-i18n="portfolio.title">Проекты</h2>
 
 			<article class="project">
 				<div class="project-header">
@@ -227,19 +224,19 @@ import '../styles/global.css';
 						loading="lazy"
 					/>
 					<div class="project-title-group">
-						<h3>Яндекс Про</h3>
-						<p class="project-subtitle">Суперап для профессионалов</p>
+						<h3 data-i18n="portfolio.projects.0.name">Яндекс Про</h3>
+						<p class="project-subtitle" data-i18n="portfolio.projects.0.subtitle">Суперап для профессионалов</p>
 					</div>
 				</div>
-				<p class="project-description">Суперап, объединяющий сервисы Яндекса для водителей, курьеров и самозанятых. Более 1 миллиона активных пользователей.</p>
-				<p class="project-role">Роль: Ведущий Flutter-разработчик, технический лидер</p>
-				<p class="project-tech">Flutter • Dart • BLoC • Clean Architecture</p>
+				<p class="project-description" data-i18n="portfolio.projects.0.description">Суперап, объединяющий сервисы Яндекса для водителей, курьеров и самозанятых. Более 1 миллиона активных пользователей.</p>
+				<p class="project-role" data-i18n="portfolio.projects.0.role">Роль: Ведущий Flutter-разработчик, технический лидер</p>
+				<p class="project-tech" data-i18n="portfolio.projects.0.tech">Flutter • Dart • BLoC • Clean Architecture</p>
 				<ul class="project-achievements">
-					<li>Спроектировал масштабируемую архитектуру для команды из 100+ разработчиков</li>
-					<li>Разработал систему динамической маршрутизации для гибкого управления навигацией</li>
-					<li>Внедрил AI-инструменты для оптимизации работы команды</li>
+					<li data-i18n="portfolio.projects.0.achievements.0">Спроектировал масштабируемую архитектуру для команды из 100+ разработчиков</li>
+					<li data-i18n="portfolio.projects.0.achievements.1">Разработал систему динамической маршрутизации для гибкого управления навигацией</li>
+					<li data-i18n="portfolio.projects.0.achievements.2">Внедрил AI-инструменты для оптимизации работы команды</li>
 				</ul>
-				<a href="https://apps.apple.com/ru/app/id1450425813" target="_blank" rel="noopener">Посмотреть в App Store →</a>
+				<a href="https://apps.apple.com/ru/app/id1450425813" target="_blank" rel="noopener" data-i18n="portfolio.projects.0.link">Посмотреть в App Store →</a>
 			</article>
 
 			<hr class="section-divider" />
@@ -253,8 +250,8 @@ import '../styles/global.css';
 						loading="lazy"
 					/>
 					<div class="project-title-group">
-						<h3>Эра перемен</h3>
-						<p class="project-subtitle">Крипто-новости и аналитика</p>
+						<h3 data-i18n="portfolio.projects.1.name">Эра перемен</h3>
+						<p class="project-subtitle" data-i18n="portfolio.projects.1.subtitle">Крипто-новости и аналитика</p>
 					</div>
 				</div>
 				<div class="project-screenshots-grid">
@@ -291,15 +288,15 @@ import '../styles/global.css';
 						/>
 					</div>
 				</div>
-				<p class="project-description">Приложение с новостями и аналитикой криптовалют и блокчейн-технологий. 4 уровня подписки с оплатой через App Store, Google Play и RuStore.</p>
-				<p class="project-role">Роль: Ведущий разработчик и архитектор</p>
-				<p class="project-tech">Flutter • Dart • In-App Purchases • REST API</p>
+				<p class="project-description" data-i18n="portfolio.projects.1.description">Приложение с новостями и аналитикой криптовалют и блокчейн-технологий. 4 уровня подписки с оплатой через App Store, Google Play и RuStore.</p>
+				<p class="project-role" data-i18n="portfolio.projects.1.role">Роль: Ведущий разработчик и архитектор</p>
+				<p class="project-tech" data-i18n="portfolio.projects.1.tech">Flutter • Dart • In-App Purchases • REST API</p>
 				<div class="project-links">
-					<a href="https://eraperemen.info/" target="_blank" rel="noopener">Сайт</a>
+					<a href="https://eraperemen.info/" target="_blank" rel="noopener" data-i18n="portfolio.projects.1.links.website">Сайт</a>
 					<span class="link-separator">•</span>
-					<a href="https://apps.apple.com/id6747209288" target="_blank" rel="noopener">App Store</a>
+					<a href="https://apps.apple.com/id6747209288" target="_blank" rel="noopener" data-i18n="portfolio.projects.1.links.appStore">App Store</a>
 					<span class="link-separator">•</span>
-					<a href="https://play.google.com/store/apps/details?id=info.eraperemen.eraperemen" target="_blank" rel="noopener">Google Play</a>
+					<a href="https://play.google.com/store/apps/details?id=info.eraperemen.eraperemen" target="_blank" rel="noopener" data-i18n="portfolio.projects.1.links.googlePlay">Google Play</a>
 				</div>
 			</article>
 
@@ -314,20 +311,20 @@ import '../styles/global.css';
 						loading="lazy"
 					/>
 					<div class="project-title-group">
-						<h3>WowChef</h3>
-						<p class="project-subtitle">Кулинарное приложение (архивный проект)</p>
+						<h3 data-i18n="portfolio.projects.2.name">WowChef</h3>
+						<p class="project-subtitle" data-i18n="portfolio.projects.2.subtitle">Кулинарное приложение (архивный проект)</p>
 					</div>
 				</div>
-				<p class="project-description">Кулинарное приложение с рецептами и видеоинструкциями. Реализованы функции избранного, поиска по категориям, пошаговые инструкции с таймерами, покупка подписки через магазины. Разработал fullstack: Flutter-приложение, backend на Kotlin/Ktor, админ-панель на React.</p>
-				<p class="project-status">Статус: Проект перестал поддерживаться</p>
-				<p class="project-tech">Flutter • Kotlin/Ktor • React • Kubernetes</p>
-				<a href="https://wowchef.kitchen/" target="_blank" rel="noopener">Сайт</a>
+				<p class="project-description" data-i18n="portfolio.projects.2.description">Кулинарное приложение с рецептами и видеоинструкциями. Реализованы функции избранного, поиска по категориям, пошаговые инструкции с таймерами, покупка подписки через магазины. Разработал fullstack: Flutter-приложение, backend на Kotlin/Ktor, админ-панель на React.</p>
+				<p class="project-status" data-i18n="portfolio.projects.2.status">Статус: Проект перестал поддерживаться</p>
+				<p class="project-tech" data-i18n="portfolio.projects.2.tech">Flutter • Kotlin/Ktor • React • Kubernetes</p>
+				<a href="https://wowchef.kitchen/" target="_blank" rel="noopener" data-i18n="portfolio.projects.2.link">Сайт</a>
 			</article>
 		</section>
 
 		<!-- Speaking Section -->
 		<section id="speaking">
-			<h2>Выступления</h2>
+			<h2 data-i18n="speaking.title">Выступления</h2>
 			
 			<div class="speaking-grid">
 				<a href="https://www.youtube.com/watch?v=I2WOcO15fdI" target="_blank" rel="noopener" class="talk-card">
@@ -336,10 +333,10 @@ import '../styles/global.css';
 						<img src="/images/speaking/cross-conf-logo.svg" alt="CrossConf logo" class="talk-logo" loading="lazy" />
 					</div>
 					<div class="talk-content">
-						<h3>CrossConf 2022</h3>
-						<p class="talk-title">"За безопасный Flutter"</p>
-						<p class="talk-description">Доклад о практиках безопасной разработки на Flutter</p>
-						<span class="talk-link-text">Смотреть на YouTube →</span>
+						<h3 data-i18n="speaking.talks.0.conference">CrossConf 2022</h3>
+						<p class="talk-title" data-i18n="speaking.talks.0.title">"За безопасный Flutter"</p>
+						<p class="talk-description" data-i18n="speaking.talks.0.description">Доклад о практиках безопасной разработки на Flutter</p>
+						<span class="talk-link-text" data-i18n="speaking.talks.0.link">Смотреть на YouTube →</span>
 					</div>
 				</a>
 
@@ -349,10 +346,10 @@ import '../styles/global.css';
 						<img src="/images/speaking/merge-conf-logo.svg" alt="MergeConf logo" class="talk-logo" loading="lazy" />
 					</div>
 					<div class="talk-content">
-						<h3>MergeConf 2022</h3>
-						<p class="talk-title">"Эволюционная архитектура"</p>
-						<p class="talk-description">Как проектировать архитектуру, которая растет вместе с продуктом</p>
-						<span class="talk-link-text">Смотреть на YouTube →</span>
+						<h3 data-i18n="speaking.talks.1.conference">MergeConf 2022</h3>
+						<p class="talk-title" data-i18n="speaking.talks.1.title">"Эволюционная архитектура"</p>
+						<p class="talk-description" data-i18n="speaking.talks.1.description">Как проектировать архитектуру, которая растет вместе с продуктом</p>
+						<span class="talk-link-text" data-i18n="speaking.talks.1.link">Смотреть на YouTube →</span>
 					</div>
 				</a>
 
@@ -363,10 +360,10 @@ import '../styles/global.css';
 						</div>
 					</div>
 					<div class="talk-content">
-						<h3>Митап Surf 2022</h3>
-						<p class="talk-title">Выступление на митапе мобильных разработчиков</p>
-						<p class="talk-description">Обсуждение лучших практик разработки</p>
-						<span class="talk-link-text">Подробнее →</span>
+						<h3 data-i18n="speaking.talks.2.conference">Митап Surf 2022</h3>
+						<p class="talk-title" data-i18n="speaking.talks.2.title">Выступление на митапе мобильных разработчиков</p>
+						<p class="talk-description" data-i18n="speaking.talks.2.description">Обсуждение лучших практик разработки</p>
+						<span class="talk-link-text" data-i18n="speaking.talks.2.link">Подробнее →</span>
 					</div>
 				</a>
 
@@ -376,10 +373,10 @@ import '../styles/global.css';
 						<img src="/images/logos/yandex-2.svg" alt="Яндекс" class="talk-logo" loading="lazy" />
 					</div>
 					<div class="talk-content">
-						<h3>Школа мобильной разработки Яндекса</h3>
-						<p class="talk-title">"Безопасность в мобильной разработке"</p>
-						<p class="talk-description">Лекция о практиках защиты данных и безопасного кода</p>
-						<span class="talk-link-text">Смотреть на YouTube →</span>
+						<h3 data-i18n="speaking.talks.3.conference">Школа мобильной разработки Яндекса</h3>
+						<p class="talk-title" data-i18n="speaking.talks.3.title">"Безопасность в мобильной разработке"</p>
+						<p class="talk-description" data-i18n="speaking.talks.3.description">Лекция о практиках защиты данных и безопасного кода</p>
+						<span class="talk-link-text" data-i18n="speaking.talks.3.link">Смотреть на YouTube →</span>
 					</div>
 				</a>
 
@@ -389,10 +386,10 @@ import '../styles/global.css';
 						<img src="/images/logos/yandex-2.svg" alt="Яндекс" class="talk-logo" loading="lazy" />
 					</div>
 					<div class="talk-content">
-						<h3>Школа мобильной разработки Яндекса</h3>
-						<p class="talk-title">"Архитектура мобильных приложений"</p>
-						<p class="talk-description">Паттерны проектирования и масштабируемая архитектура</p>
-						<span class="talk-link-text">Смотреть на YouTube →</span>
+						<h3 data-i18n="speaking.talks.4.conference">Школа мобильной разработки Яндекса</h3>
+						<p class="talk-title" data-i18n="speaking.talks.4.title">"Архитектура мобильных приложений"</p>
+						<p class="talk-description" data-i18n="speaking.talks.4.description">Паттерны проектирования и масштабируемая архитектура</p>
+						<span class="talk-link-text" data-i18n="speaking.talks.4.link">Смотреть на YouTube →</span>
 					</div>
 				</a>
 
@@ -403,9 +400,9 @@ import '../styles/global.css';
 						</div>
 					</div>
 					<div class="talk-content">
-						<h3>МТУСИ</h3>
-						<p class="talk-title">Преподавание Flutter-разработки</p>
-						<p class="talk-description">Ведение курса по разработке мобильных приложений</p>
+						<h3 data-i18n="speaking.talks.5.conference">МТУСИ</h3>
+						<p class="talk-title" data-i18n="speaking.talks.5.title">Преподавание Flutter-разработки</p>
+						<p class="talk-description" data-i18n="speaking.talks.5.description">Ведение курса по разработке мобильных приложений</p>
 					</div>
 				</div>
 			</div>
@@ -413,29 +410,29 @@ import '../styles/global.css';
 
 		<!-- Contact Section -->
 		<section id="contact">
-			<h2>Свяжитесь со мной</h2>
+			<h2 data-i18n="contact.title">Свяжитесь со мной</h2>
 			
 			<div class="contact-grid">
 				<div class="contact-main">
-					<p class="contact-intro">Открыт для интересных проектов и предложений о сотрудничестве.</p>
-					<p class="contact-hint">Если долго не отвечаю — возможно я <span class="overtime-link">overtime</span></p>
+					<p class="contact-intro" data-i18n="contact.intro">Открыт для интересных проектов и предложений о сотрудничестве.</p>
+					<p class="contact-hint"><span data-i18n="contact.hint">Если долго не отвечаю — возможно я </span><span class="overtime-link" data-i18n="contact.overtime">overtime</span></p>
 					
 					<a href="https://t.me/a1exs_dev" class="telegram-button" target="_blank" rel="noopener">
 						<img src="/images/logos/telegram.svg" alt="Telegram" class="telegram-icon" />
-						<span>Написать в Telegram</span>
+						<span data-i18n="contact.cta">Написать в Telegram</span>
 					</a>
 				</div>
 				
 				<div class="contact-links">
-					<h3>Другие способы связи</h3>
+					<h3 data-i18n="contact.otherWays">Другие способы связи</h3>
 					<div class="contact-links-list">
 						<a href="https://github.com/alexsvdk" target="_blank" rel="noopener" class="contact-link">
 							<img src="/images/logos/github-icon-1.svg" alt="GitHub" class="contact-icon" loading="lazy" />
-							<span>GitHub</span>
+							<span data-i18n="contact.links.github">GitHub</span>
 						</a>
 						<a href="https://www.linkedin.com/in/a1exs/" target="_blank" rel="noopener" class="contact-link">
 							<img src="/images/logos/linkedin-icon-1.svg" alt="LinkedIn" class="contact-icon" loading="lazy" />
-							<span>LinkedIn</span>
+							<span data-i18n="contact.links.linkedin">LinkedIn</span>
 						</a>
 					<a href="mailto:alex.svdk@gmail.com" class="contact-link">
 						<span class="email-at-symbol">@</span>
@@ -605,7 +602,7 @@ import '../styles/global.css';
 
 			// Apply translations to page
 			function applyTranslations(data: any): void {
-				// Update navigation
+				// Update all elements with data-i18n
 				document.querySelectorAll('[data-i18n]').forEach(el => {
 					const key = el.getAttribute('data-i18n');
 					if (!key) return;
@@ -615,6 +612,11 @@ import '../styles/global.css';
 							el.placeholder = value;
 						} else {
 							el.textContent = value;
+						}
+
+						// Update glitch-text data-text attribute
+						if (el.classList.contains('glitch-text') && key === 'hero.name') {
+							el.setAttribute('data-text', value);
 						}
 					}
 				});
@@ -626,12 +628,6 @@ import '../styles/global.css';
 					const value = getNestedValue(data, key);
 					if (value) el.setAttribute('aria-label', value);
 				});
-
-				// Update copyright year dynamically
-				const copyrightEl = document.querySelector('[data-i18n="footer.copyright"]');
-				if (copyrightEl && data.footer?.copyright) {
-					copyrightEl.textContent = data.footer.copyright;
-				}
 			}
 
 			// Helper to get nested object value by path (e.g., "nav.about")
