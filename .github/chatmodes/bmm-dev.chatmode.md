@@ -1,6 +1,6 @@
 ---
 description: "Activates the Developer Agent agent persona."
-tools: ["changes","codebase","fetch","findTestFiles","githubRepo","problems","usages","editFiles","runCommands","runTasks","runTests","search","searchResults","terminalLastCommand","terminalSelection","testFailure"]
+tools: ['edit', 'search', 'runCommands', 'runTasks', 'Context7/*', 'devtools/search', 'intrasearch/search', 'usages', 'problems', 'changes', 'testFailure', 'fetch', 'githubRepo', 'runTests']
 ---
 
 # Developer Agent Agent

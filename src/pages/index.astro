@@ -247,5 +247,48 @@ import '../styles/global.css';
 				<button lang="en" aria-label="English">EN</button>
 			</div>
 		</footer>
+
+		<script>
+			// Navigation: Highlight active section
+			document.addEventListener('DOMContentLoaded', () => {
+				const navLinks = document.querySelectorAll('#navigation a');
+				const sections = document.querySelectorAll('section[id], header[id]');
+
+				// Intersection Observer for active section
+				const observerOptions = {
+					root: null,
+					rootMargin: '-100px 0px -66%',
+					threshold: 0
+				};
+
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							const id = entry.target.getAttribute('id');
+							navLinks.forEach(link => {
+								link.classList.remove('active');
+								if (link.getAttribute('href') === `#${id}`) {
+									link.classList.add('active');
+								}
+							});
+						}
+					});
+				}, observerOptions);
+
+				sections.forEach(section => observer.observe(section));
+
+				// Smooth scroll on click (backup for browsers without CSS scroll-behavior)
+				navLinks.forEach(link => {
+					link.addEventListener('click', (e) => {
+						e.preventDefault();
+						const targetId = link.getAttribute('href').substring(1);
+						const targetSection = document.getElementById(targetId);
+						if (targetSection) {
+							targetSection.scrollIntoView({ behavior: 'smooth' });
+						}
+					});
+				});
+			});
+		</script>
 	</body>
 </html>

@@ -107,3 +107,70 @@ section + section {
 	font-size: 1rem;
 	margin-bottom: 2rem;
 }
+
+/* Navigation Styles - Story 1.6 */
+#navigation {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(10, 10, 10, 0.95);
+	backdrop-filter: blur(10px);
+	z-index: 1000;
+	padding: 1rem 2rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#navigation ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	max-width: var(--max-width);
+	margin: 0 auto;
+}
+
+#navigation li {
+	list-style: none;
+}
+
+#navigation a {
+	color: var(--color-text-primary);
+	text-decoration: none;
+	font-size: 1rem;
+	font-weight: 500;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	transition: all 0.3s ease;
+	position: relative;
+}
+
+#navigation a:hover {
+	color: var(--color-text-primary);
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+#navigation a:focus {
+	outline: 2px solid var(--color-text-primary);
+	outline-offset: 2px;
+}
+
+#navigation a.active {
+	background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Smooth scrolling */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Offset for fixed navigation */
+section[id],
+header[id] {
+	scroll-margin-top: 5rem;
+}
+
+/* Adjust body padding for fixed nav */
+body {
+	padding-top: 4rem;
+}
