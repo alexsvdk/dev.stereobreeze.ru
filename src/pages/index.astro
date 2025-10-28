@@ -217,6 +217,14 @@ import '../styles/global.css';
 			<h2>Проекты</h2>
 
 			<article class="project">
+				<div class="project-screenshot-container">
+					<img 
+						src="/images/logos/yandex-pro.jpg" 
+						alt="Яндекс Про - скриншот приложения" 
+						class="project-screenshot"
+						loading="lazy"
+					/>
+				</div>
 				<h3>Яндекс Про</h3>
 				<p class="project-subtitle">Суперап для профессионалов</p>
 				<p class="project-description">Суперап, объединяющий сервисы Яндекса для водителей, курьеров и самозанятых. Более 1 миллиона активных пользователей.</p>
@@ -231,6 +239,40 @@ import '../styles/global.css';
 			</article>
 
 			<article class="project">
+				<div class="project-screenshots-grid">
+					<div class="project-screenshot-container">
+						<img 
+							src="/images/portfolio/0.png" 
+							alt="Эра перемен - главный экран" 
+							class="project-screenshot"
+							loading="lazy"
+						/>
+					</div>
+					<div class="project-screenshot-container">
+						<img 
+							src="/images/portfolio/1.png" 
+							alt="Эра перемен - новости" 
+							class="project-screenshot"
+							loading="lazy"
+						/>
+					</div>
+					<div class="project-screenshot-container">
+						<img 
+							src="/images/portfolio/2.png" 
+							alt="Эра перемен - аналитика" 
+							class="project-screenshot"
+							loading="lazy"
+						/>
+					</div>
+					<div class="project-screenshot-container">
+						<img 
+							src="/images/portfolio/3.png" 
+							alt="Эра перемен - подписки" 
+							class="project-screenshot"
+							loading="lazy"
+						/>
+					</div>
+				</div>
 				<h3>Эра перемен</h3>
 				<p class="project-subtitle">Крипто-новости и аналитика</p>
 				<p class="project-description">Приложение с новостями и аналитикой криптовалют и блокчейн-технологий. 4 уровня подписки с оплатой через App Store, Google Play и RuStore.</p>
@@ -365,7 +407,8 @@ import '../styles/global.css';
 				navLinks.forEach(link => {
 					link.addEventListener('click', (e) => {
 						e.preventDefault();
-						const targetId = link.getAttribute('href').substring(1);
+						const targetId = link.getAttribute('href')?.substring(1);
+						if (!targetId) return;
 						const targetSection = document.getElementById(targetId);
 						if (targetSection) {
 							targetSection.scrollIntoView({ behavior: 'smooth' });
