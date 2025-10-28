@@ -1,0 +1,65 @@
+name: Deploy to Yandex Cloud S3
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build project
+        run: npm run build
+      
+      - name: Configure AWS CLI for Yandex Cloud
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.YC_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.YC_SECRET_ACCESS_KEY }}
+          aws-region: ru-central1
+      
+      - name: Deploy static assets to S3
+        run: |
+          aws s3 sync dist/ s3://dev-stereobreeze-ru \
+            --endpoint-url https://storage.yandexcloud.net \
+            --cache-control "public, max-age=31536000, immutable" \
+            --exclude "*.html" \
+            --exclude "*.json" \
+            --delete
+      
+      - name: Deploy HTML files to S3
+        run: |
+          aws s3 sync dist/ s3://dev-stereobreeze-ru \
+            --endpoint-url https://storage.yandexcloud.net \
+            --cache-control "public, max-age=0, must-revalidate" \
+            --exclude "*" \
+            --include "*.html" \
+            --delete
+      
+      - name: Deploy JSON files to S3
+        run: |
+          aws s3 sync dist/ s3://dev-stereobreeze-ru \
+            --endpoint-url https://storage.yandexcloud.net \
+            --cache-control "public, max-age=3600" \
+            --exclude "*" \
+            --include "*.json" \
+            --delete
+      
+      - name: Deployment summary
+        run: |
+          echo "✅ Deployment successful!"
+          echo "🌐 Website: https://dev.stereobreeze.ru"

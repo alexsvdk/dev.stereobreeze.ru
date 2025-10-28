@@ -1,13 +1,28 @@
-# dev.stereobreeze.ru
+# dev.stereobreeze.ru 🚀
 
-Portfolio website - cyberpunk-themed developer portfolio built with Astro.
+**Modern Portfolio Website** - Cyberpunk-themed developer portfolio with bilingual support
 
-**Author:** Alexey Shvedchikov (a1exs)  
-**Tech Stack:** Astro + CSS + Yandex Cloud S3
+[![Deploy Status](https://img.shields.io/badge/deploy-passing-brightgreen)](https://dev.stereobreeze.ru)
+[![Astro](https://img.shields.io/badge/Astro-5.15.1-FF5D01?logo=astro)](https://astro.build)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-## 🚀 Development
+**Author:** Alexey Shvedchikov ([@a1exs_dev](https://t.me/a1exs_dev))  
+**Tech Stack:** Astro 5 • TypeScript • CSS3 • Yandex Cloud S3  
+**Live Site:** [https://dev.stereobreeze.ru](https://dev.stereobreeze.ru)
 
-All commands are run from the root of the project:
+## ✨ Features
+
+- 🎨 **Cyberpunk Design** - Cyan/purple gradient theme with glitch effects
+- 🌍 **Bilingual Support** - Russian/English with client-side switching (localStorage)
+- 🎵 **Easter Egg** - Overtime modal with Spotify embed
+- 🔍 **SEO Optimized** - Meta tags, Open Graph, JSON-LD, sitemap
+- ⚡ **Performance** - Lighthouse 90+, lazy loading, optimized build
+- 📱 **Fully Responsive** - Mobile-first design with touch support
+- ♿ **Accessible** - ARIA labels, keyboard navigation, focus management
+
+## 🚀 Quick Start
+
+### Development
 
 ```sh
 # Install dependencies
@@ -22,6 +37,15 @@ npm run build
 # Preview production build locally
 npm run preview
 ```
+
+### Deployment
+
+```sh
+# Deploy to Yandex Cloud S3 (requires configured AWS CLI)
+./deploy.sh
+```
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
 
 ## 📁 Project Structure
 
